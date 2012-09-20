@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/wpc/workspace/vmkid/wpc/gdb/src'
+let g:netrw_dirhist_2='/tmp'
+let g:netrw_dirhist_3='/home/wpc/workspace/5913/vmkid'
+let g:netrw_dirhist_4='/home/wpc/workspace/vmkid/wpc/gdb/.git'
+let g:netrw_dirhist_5='/etc/nginx/sites-available'
+let g:netrw_dirhist_6='/home/wpc/.vimperator'

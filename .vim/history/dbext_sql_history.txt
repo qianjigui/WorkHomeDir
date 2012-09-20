@@ -1,0 +1,3 @@
+dbext history, <enter> or dbl-click to execute, or [q] to quit (history size:50)
+1. create database test_development
+2. create database wicom_development
