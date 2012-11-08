@@ -1,0 +1,28 @@
+set showtabline=0
+colorscheme desert
+
+command -nargs=0 -description='Go to DCU User page' dcu tabopen https://www.dcu.ie/portal/index.php3
+
+command -nargs=0 -description='Go to Harmonica Study Web' harmonica tabopen http://www.tenholes.com/index.php
+
+command -nargs=0 -description='Go to Yupoo Photos' gp tabopen http://qianjigui.yupoo.com/
+
+command -nargs=0 -description='Go to Google Calendar' gc tabopen https://www.google.com/calendar/render
+command -nargs=0 -description='Go to Google Docs' gd tabopen https://docs.google.com/
+command -nargs=0 -description='Go to Gmail' ge tabopen https://mail.google.com/mail/
+command -nargs=0 -description='Go to Google Group' gg tabopen http://groups.google.com/
+command -nargs=0 -description='Go to Google Code' ggc tabopen http://code.google.com/
+command -nargs=0 -description='Go to iGoogle' gh tabopen http://www.google.com/ig?hl=en
+command -nargs=0 -description='Go to Google Notebook' gnb tabopen http://code.google.com/p/qjg-wiki/wiki/index
+command -nargs=0 -description='Go to Google Reader' gr tabopen https://www.google.com/reader/view/
+command -nargs=0 -description='Go to Google Translate' gt tabopen http://translate.google.com/#en|zh-CN|
+
+command -nargs=0 -description='JS Enable' jsyes set! javascript.enabled=true
+command -nargs=0 -description='JS Disenable' jsno set! javascript.enabled=false
+
+command -nargs=0 -description='Go to Web QQ' qq tabopen http://web.qq.com/
+
+
+autocmd LocationChange .* js modes.passAllKeys = /(mail\.google\.com)|(www\.google\.com\/reader)/.test(buffer.URL)
+
+set gui=none
