@@ -8,6 +8,17 @@ else
 endif
 
 "========================================================
+" Font size
+"========================================================
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 13
+  elseif has("gui_win32")
+    set guifont=Consolas:h13:cANSI
+  endif
+endif
+
+"========================================================
 " Set the filetype
 " =======================================================
 "au BufRead,BufNewFile *.json set filetype=json

@@ -1,3 +1,4 @@
 conque_1.1.vba: call delete('/home/wpc/.vim/autoload/conque_term.vim')|call delete('/home/wpc/.vim/doc/conque_term.txt')|call delete('/home/wpc/.vim/plugin/conque_term.vim')|call delete('/home/wpc/.vim/syntax/conque_term.vim')
 supertab.vba: call delete('/home/wpc/.vim/doc/supertab.txt')|call delete('/home/wpc/.vim/plugin/supertab.vim')
 supertab.vmb: call delete('/home/wpc/.vim/doc/supertab.txt')|call delete('/home/wpc/.vim/plugin/supertab.vim')
+html5.vim-0.27.vba: call delete('/home/wpc/.vim/autoload/xml/aria.vim')|call delete('/home/wpc/.vim/autoload/xml/html5.vim')|call delete('/home/wpc/.vim/autoload/htmlcomplete.vim')|call delete('/home/wpc/.vim/indent/html.vim')|call delete('/home/wpc/.vim/syntax/javascript/html5.vim')|call delete('/home/wpc/.vim/syntax/html/aria.vim')|call delete('/home/wpc/.vim/syntax/html/html5.vim')|call delete('/home/wpc/.vim/syntax/html/rdfa.vim')

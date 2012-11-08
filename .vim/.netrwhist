@@ -1,8 +1,8 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/wpc/workspace/vmkid/wpc/gdb/src'
-let g:netrw_dirhist_2='/tmp'
-let g:netrw_dirhist_3='/home/wpc/workspace/5913/vmkid'
-let g:netrw_dirhist_4='/home/wpc/workspace/vmkid/wpc/gdb/.git'
-let g:netrw_dirhist_5='/etc/nginx/sites-available'
-let g:netrw_dirhist_6='/home/wpc/.vimperator'
+let g:netrw_dirhist_1='/home/wpc/workspace/work/codeManage/.git'
+let g:netrw_dirhist_2='/home/wpc/workspace/work/codeManage/docs/imgs'
+let g:netrw_dirhist_3='/home/wpc/workspace/vmkid/wpc/gdb/gdbinit'
+let g:netrw_dirhist_4='/home/wpc/Desktop'
+let g:netrw_dirhist_5='/home/wpc/workspace/EclipsePDE/OQLBatch/test'
+let g:netrw_dirhist_6='/home/wpc/workspace/work/memory/procrank/dalvik'
