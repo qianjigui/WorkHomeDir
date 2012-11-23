@@ -1,0 +1,43 @@
+#! /usr/bin/env ruby
+# The ruby script file
+# Copyright(c) 2003-2009 Wang Pengcheng(wpc0000@gmail.com)
+# http://qianjigui.javaeye.com
+
+# file is the filename
+#  b_time is the begin time
+#  length is the part-length
+#  pie is the piece of the part
+#  输入参数：文件名称 开始时间用秒计算 一段的长度 切断的数目
+
+if ARGV.length!=4 then
+  puts 'videotomz filename begin_sec length_per_part num_parts'
+  exit
+end
+MEM_ENCODE_OPTION={
+:first => "-oac mp3lame -lameopts preset=64 -ovc xvid -xvidencopts bitrate=600 -of avi",
+:seconde => "-oac mp3lame -lameopts preset=standard -ovc xvid -lavcopts vcodec=mpeg4:vbitrate=1200:mbd=2:trell:v4mv -ffourcc XVID  -mc 0 -noskip",
+:third => "-oac mp3lame -lameopts aq=7:vbr=2:q=6 -srate 32000 -vf scale=176:128,harddup -ovc xvid -xvidencopts fixed_quant=8"
+}
+MEM_OPTION = ""
+file, b_time_s, length_s, pie= ARGV
+b_time = b_time_s.to_i || 0
+length = length_s.to_i || 300
+if not File.exists? file then
+  p "#{file} not be found"
+else
+  dir= "#{file}-dir"
+  if  File.extname(file)=~ /rm(vb)?/i then
+  %x[mencoder #{file} #{MEM_ENCODE_OPTION[:first]} #{MEM_OPTION} -o #{file}.avi]
+    file=file+".avi"
+  end
+  type= ".avi" #
+  if not File.exists? dir then
+    Dir.mkdir(dir)
+  end
+  for i in 1..pie.to_i do
+    # How terrible, the MEIZU mp3 accept only a special video format
+    # Below is the format information, XVID-MPEG4 176x128 with 20f/s
+    %x[ffmpeg -ss #{b_time+length*(i-1)} -t #{length} -i #{file} -s 176x128 -vcodec mpeg4 -vtag xvid -r 20 -y #{dir}/#{i.to_s.rjust(pie.length,'0')}#{type}]
+  end
+end
+
