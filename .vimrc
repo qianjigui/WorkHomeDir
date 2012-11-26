@@ -151,7 +151,7 @@ set go-=T
 
 "Tags, pathes for Coding
 set tags=./tags,../tags,../../tags,../../../tags,../../../../tags,./TAGS,../TAGS,../../../../../tags
-set path=.,./**,../**
+set path=.
 
 "===============================================
 "              Vim IM
