@@ -1,0 +1,15 @@
+# IMPORTANT:
+#   Do NOT contain the '/' at the end
+
+:config:
+    :local: data
+    :remote: /media/f436f79d-d652-4bc3-a62d-3460fece46c8/backup/MyDocuments/medias/PHONE
+    #:remote: '/sdcard'
+
+:map:
+    #- :local: books
+    #  :remote: books
+    - :local: 'photos/DCIM'
+      :remote: DCIM
+    - :local: 'photos/Pictures'
+      :remote: Pictures
