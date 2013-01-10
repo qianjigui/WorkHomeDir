@@ -100,6 +100,8 @@ fi
 
 alias gvim="gvim 2>/dev/null"
 
-PS1='$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I") $PWD)\$ '
+#PS1='$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I") $PWD)\$ '
+PS1='$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I") $PWD)\[\033[01;36m\]\W\[\033[00m\]\$ '
+
 
 set -o vi

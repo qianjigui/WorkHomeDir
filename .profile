@@ -21,6 +21,11 @@ if [ -d "$LOCAL_ERLANG" ]; then
   PATH="$LOCAL_ERLANG:$PATH"
 fi
 
+ANDROID_TOOLS='/home/wpc/workspace/android-sdk-linux/platform-tools'
+if [ -d $ANDROID_TOOLS ]; then
+    PATH="$ANDROID_TOOLS:$PATH"
+fi
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
