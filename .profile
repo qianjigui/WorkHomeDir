@@ -8,6 +8,11 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+BASH_PATH=/bin/bash
+if [ -f $BASH_PATH ]; then
+    export SHELL=$BASH_PATH
+fi
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -16,12 +21,17 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+OPT_JDK_BIN="/opt/jdk1.6.0_35/bin"
+if [ -d $OPT_JDK_BIN ]; then
+    PATH="$OPT_JDK_BIN:$PATH"
+fi
+
 LOCAL_ERLANG=/usr/local/erlang/bin
 if [ -d "$LOCAL_ERLANG" ]; then
   PATH="$LOCAL_ERLANG:$PATH"
 fi
 
-ANDROID_TOOLS='/home/wpc/workspace/android-sdk-linux/platform-tools'
+ANDROID_TOOLS="$HOME/workspace/android-sdk-linux/platform-tools"
 if [ -d $ANDROID_TOOLS ]; then
     PATH="$ANDROID_TOOLS:$PATH"
 fi
