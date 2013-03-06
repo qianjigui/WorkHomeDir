@@ -82,8 +82,8 @@ set incsearch ignorecase smartcase hlsearch
 " tab newline visible 
 set list
 " set listchars=eol:↓,tab:>-,trail:-
-" set listchars=tab:>-,trail:-
-set listchars=tab:\ \ ,trail:-
+set listchars=tab:>-,trail:-
+" set listchars=tab:\ \ ,trail:-
 
 "================================================
 " Map the keymap to what I like
