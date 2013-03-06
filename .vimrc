@@ -82,8 +82,8 @@ set incsearch ignorecase smartcase hlsearch
 " tab newline visible 
 set list
 " set listchars=eol:↓,tab:>-,trail:-
-" set listchars=tab:>-,trail:-
-set listchars=tab:\ \ ,trail:-
+set listchars=tab:>-,trail:-
+" set listchars=tab:\ \ ,trail:-
 
 "================================================
 " Map the keymap to what I like
@@ -151,7 +151,7 @@ set go-=T
 
 "Tags, pathes for Coding
 set tags=./tags,../tags,../../tags,../../../tags,../../../../tags,./TAGS,../TAGS,../../../../../tags
-set path=.,./**,../**
+set path=.
 
 "===============================================
 "              Vim IM

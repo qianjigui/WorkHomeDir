@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd `pwd`
+echo 'Update GTAGS...'
+if [ -f GTAGS ]; then
+    global -u
+else
+    gtags
+fi
+echo 'Finish GTAGS.'
+echo 'Update CTAGS...'
+ctags -R
+echo 'Finish CTAGS.'

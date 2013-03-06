@@ -1,0 +1,15 @@
+#! /usr/bin/env ruby
+# Copyright (C) 2003-2009 Wang Pengcheng <wpc0000@gmail.com>
+# Permission is granted to copy, distribute and/or modify this
+# document under the terms of the GNU Free Documentation License,
+# Version 2.0 or any later version published by the Free Software Foundation;
+# with no Invariant Sections.
+# You may obtain a copy of the License at
+# http://www.gnu.org/licenses/lgpl.txt
+a = %x[ ps -A | grep firefox]
+a.each_line do |line|
+  line = line.chomp
+  line=~/^( *)(\d+)(.*)$/
+  pid =Regexp.last_match
+  %x[kill -9 #{pid[2]}]
+end
