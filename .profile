@@ -31,6 +31,11 @@ if [ -d "$LOCAL_ERLANG" ]; then
   PATH="$LOCAL_ERLANG:$PATH"
 fi
 
+LOCAL_RUBY=/usr/local/ruby/bin
+if [ -d "$LOCAL_RUBY" ]; then
+  PATH="$LOCAL_RUBY:$PATH"
+fi
+
 ANDROID_TOOLS="$HOME/workspace/android-sdk-linux/platform-tools"
 if [ -d $ANDROID_TOOLS ]; then
     PATH="$ANDROID_TOOLS:$PATH"
