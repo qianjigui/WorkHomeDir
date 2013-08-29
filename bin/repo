@@ -3,7 +3,7 @@
 ## repo default configuration
 ##
 from __future__ import print_function
-REPO_URL = 'http://gitlab.alibaba-inc.com/scm/git-repo.git'
+REPO_URL = 'http://gitlab.alibaba-inc.com/scm/git-repo.git/'
 REPO_REV = 'stable'
 
 # Copyright (C) 2008 Google Inc.
@@ -486,10 +486,10 @@ def _Clone(url, local, quiet):
   _SetConfig(local, 'remote.origin.url', url)
   _SetConfig(local, 'remote.origin.fetch',
                     '+refs/heads/*:refs/remotes/origin/*')
-  if _DownloadBundle(url, local, quiet):
-    _ImportBundle(local)
-  else:
-    _Fetch(url, local, 'origin', quiet)
+#  if _DownloadBundle(url, local, quiet):
+#    _ImportBundle(local)
+ # else:
+  _Fetch(url, local, 'origin', quiet)
 
 
 def _Verify(cwd, branch, quiet):
