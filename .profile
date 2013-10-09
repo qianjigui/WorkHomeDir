@@ -24,6 +24,7 @@ fi
 OPT_JDK_BIN="/opt/jdk1.6.0_35/bin"
 if [ -d $OPT_JDK_BIN ]; then
     PATH="$OPT_JDK_BIN:$PATH"
+    export JAVA_HOME=$OPT_JDK_BIN/..
 fi
 
 LOCAL_ERLANG=/usr/local/erlang/bin

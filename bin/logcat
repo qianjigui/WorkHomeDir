@@ -7,7 +7,7 @@ then
     ADB=$1
 fi
 
-FILE=new.`date +%Y%m%d%H%M%S`_logcat.log
+FILE=new_logcat.`date +%Y%m%d%H%M%S`.log
 
 for i in `ls new.*_logcat.log`
 do
