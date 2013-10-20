@@ -1,0 +1,14 @@
+#!/bin/bash
+
+SUFFIX=_minicom.log
+
+FILE=new_mini.`date +%Y%m%d%H%M%S`$SUFFIX
+for i in `ls new.*$SUFFIX`
+do
+    mv $i old_$i
+done
+
+sudo chmod 666 /dev/ttyUSB0
+
+minicom -C $FILE
+

@@ -1,4 +1,5 @@
 set showtabline=0
+set defsearch=google
 colorscheme desert
 
 command -nargs=0 -description='Go to DCU User page' dcu tabopen https://www.dcu.ie/portal/index.php3
@@ -21,6 +22,17 @@ command -nargs=0 -description='JS Enable' jsyes set! javascript.enabled=true
 command -nargs=0 -description='JS Disenable' jsno set! javascript.enabled=false
 
 command -nargs=0 -description='Go to Web QQ' qq tabopen http://web.qq.com/
+
+command -nargs=0 -description='Go to YunOS system runtime wpc page' wpc tabopen http://docs.alibaba-inc.com/pages/viewpage.action?pageId=109220399
+command -nargs=0 -description='Go to YunOS system runtime wpc page' wpc2 tabopen http://system.aliyun-inc.com/index.php/User:Pengcheng.wang
+
+
+command -nargs=0 -description='Go to Alibaba ATA' ata tabopen http://www.atatech.org/myata/all
+
+command -nargs=0 -description='Go to HR system' hr tabopen https://alihr.alibaba.com:4430/psp/alihr/EMPLOYEE/HRMS/h/?cmd=login&languageCd=ZHS
+
+
+command -nargs=1 -description='Go to Bugfree external By ID' bug tabopen http://bugfree-external.aliyun-inc.com/bugfree/bug/<args>
 
 
 autocmd LocationChange .* js modes.passAllKeys = /(mail\.google\.com)|(www\.google\.com\/reader)|(theoldreader\.com)/.test(buffer.URL)

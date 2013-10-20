@@ -1,14 +1,14 @@
 # This is a git configuration file.
 [user]
-	name = pengcheng.wang
-	email = pengcheng.wang@alibaba-inc.com
+    name = pengcheng.wang
+    email = pengcheng.wang@alibaba-inc.com
 [color]
-	ui = auto
+    ui = auto
 [alias]
-	co = checkout
-	ci = commit
-	st = status
+    co = checkout
+    ci = commit
+    st = status
     br = branch
     ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr,%an)%Creset' --abbrev-commit --date=relative
 [commit]
-	template = ~/.gittemplate
+    template = ~/.gittemplate
