@@ -9,7 +9,7 @@ fi
 
 FILE=new_logcat.`date +%Y%m%d%H%M%S`.log
 
-for i in `ls new.*_logcat.log`
+for i in `ls new_logcat*.log`
 do
     mv $i old_$i
 done

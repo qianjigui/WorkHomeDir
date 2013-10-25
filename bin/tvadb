@@ -3,7 +3,7 @@
 SUFFIX=_minicom.log
 
 FILE=new_mini.`date +%Y%m%d%H%M%S`$SUFFIX
-for i in `ls new.*$SUFFIX`
+for i in `ls new_mini*$SUFFIX`
 do
     mv $i old_$i
 done
