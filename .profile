@@ -42,9 +42,13 @@ if [ -d $ANDROID_TOOLS ]; then
     PATH="$ANDROID_TOOLS:$PATH"
 fi
 
+ANDROID_TOOLS="$HOME/workspace/android/ADT/sdk/platform-tools/"
+if [ -d $ANDROID_TOOLS ]; then
+    PATH="$ANDROID_TOOLS:$PATH"
+fi
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 export LANG="en_US.utf8"
-

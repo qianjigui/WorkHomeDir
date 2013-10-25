@@ -35,6 +35,6 @@ command -nargs=0 -description='Go to HR system' hr tabopen https://alihr.alibaba
 command -nargs=1 -description='Go to Bugfree external By ID' bug tabopen http://bugfree-external.aliyun-inc.com/bugfree/bug/<args>
 
 
-autocmd LocationChange .* js modes.passAllKeys = /(mail\.google\.com)|(www\.google\.com\/reader)/.test(buffer.URL)
+autocmd LocationChange .* js modes.passAllKeys = /(mail\.google\.com)|(www\.google\.com\/reader)|(theoldreader\.com)/.test(buffer.URL)
 
 set gui=none
