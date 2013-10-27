@@ -12,3 +12,5 @@
     ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr,%an)%Creset' --abbrev-commit --date=relative
 [commit]
     template = ~/.gittemplate
+[push]
+	default = simple
