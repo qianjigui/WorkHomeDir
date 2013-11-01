@@ -106,3 +106,6 @@ PS1='$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#I") $PWD)\[\033
 
 set -o vi
 export EDITOR=vim
+
+#Set umask
+umask 0022
