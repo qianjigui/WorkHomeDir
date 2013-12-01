@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/bin/gnome-terminal -e tmux
+/usr/bin/gnome-terminal
