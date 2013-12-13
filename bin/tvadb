@@ -8,7 +8,11 @@ do
     mv $i old_$i
 done
 
-sudo chmod 666 /dev/ttyUSB0
+for i in `ls /dev/ttyUSB*`
+do
+    echo $i
+    sudo chmod 666 $i
+done
 
 minicom -C $FILE
 
