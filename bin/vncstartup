@@ -1,0 +1,8 @@
+#!/bin/bash
+
+PIDS=`ls ~/.vnc/*.pid | wc | awk '{print $1}'`
+if [ '$PIDS' = '0' ]; then
+    vncserver -geometry 1800x900
+else
+    echo 'Started'
+fi
