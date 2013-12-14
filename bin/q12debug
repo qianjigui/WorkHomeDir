@@ -1,8 +1,18 @@
 #!/bin/bash
 
-PREFIX=10.69.16.
+PREFIX=10.69.19.
 
-IP=33
+#Q12
+#IP=115
+IP=64
+
+#magicbox
+#IP=36
+
+#Q5
+#IP=20
+#IP=156
+
 for i in `adb devices | grep 5555 | awk '{print $1}'`
 do
     adb disconnect $i
