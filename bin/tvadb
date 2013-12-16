@@ -2,7 +2,10 @@
 
 SUFFIX=_minicom.log
 
-FILE=new_mini.`date +%Y%m%d%H%M%S`$SUFFIX
+IP=0
+
+TIMESTAMP=`date +%Y%m%d%H%M%S`
+FILE=new_mini.$TIMESTAMP$SUFFIX
 for i in `ls new_mini*$SUFFIX`
 do
     mv $i old_$i
@@ -14,5 +17,22 @@ do
     sudo chmod 666 $i
 done
 
-minicom -C $FILE
+if [ $# -eq 1 ];
+then
+    IP=$1
+fi
+
+CONF=/tmp/minicom${TIMESTAMP}.dlf
+cat<<END > $CONF
+# Machine-generated file - use "minicom -s" to change parameters.
+pu port             /dev/ttyUSB${IP}
+pu rtscts           No
+pu xonxoff          No
+END
+
+
+CC_NAME=userdef
+MINICOMCONF=~/.minirc.$CC_NAME
+ln -s $CONF $MINICOMCONF
+minicom -C $FILE $CC_NAME
 
