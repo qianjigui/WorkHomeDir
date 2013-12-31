@@ -1,11 +1,12 @@
 "========================================================
 " Set vim colorscheme
 "========================================================
-if has("gui_running")
-  colorscheme desert
-else
-  colorscheme darkblue
-endif
+"if has("gui_running")
+"  colorscheme desert
+"else
+"  colorscheme darkblue
+"endif
+colorscheme desert
 
 "========================================================
 " Font size
@@ -170,3 +171,5 @@ set path=.
 "===============================
 let g:SuperTabSetDefaultCompletionType="context"
 
+"Show marks
+let g:showmarks_enable=0
