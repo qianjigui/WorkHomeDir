@@ -111,3 +111,8 @@ export EDITOR=vim
 
 #Set umask
 umask 0022
+
+CUSTOM_BASHRC=~/.bashrc_custom
+if [ -f $CUSTOM_BASHRC ]; then
+    source $CUSTOM_BASHRC
+fi
