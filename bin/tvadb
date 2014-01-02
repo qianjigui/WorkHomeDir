@@ -33,6 +33,6 @@ END
 
 CC_NAME=userdef
 MINICOMCONF=~/.minirc.$CC_NAME
-ln -s $CONF $MINICOMCONF
+ln -sf $CONF $MINICOMCONF
 minicom -C $FILE $CC_NAME
 

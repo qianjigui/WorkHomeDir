@@ -2,9 +2,13 @@
 
 PREFIX=10.69.19.
 
+#MagicBox
+IP=82
+
 #Q12
 #IP=115
-IP=64
+#IP=64
+#IP=8
 
 #magicbox
 #IP=36
