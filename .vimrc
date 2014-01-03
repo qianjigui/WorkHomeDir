@@ -173,3 +173,7 @@ let g:SuperTabSetDefaultCompletionType="context"
 
 "Show marks
 let g:showmarks_enable=0
+
+"Markdown"
+let g:vim_markdown_folding_disabled=0
+let g:vim_markdown_initial_foldlevel=1
