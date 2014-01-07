@@ -3,9 +3,9 @@
 
 if [ ! $# -eq 2 ];
 then
-    cat<<END
+    cat<<-END
     Usage: $0 zip1 zip2
-END
+    END
     exit 1
 fi
 
