@@ -1,7 +1,7 @@
 # This is a git configuration file.
 [user]
-    name = pengcheng.wang
-    email = pengcheng.wang@alibaba-inc.com
+    #name = qianjigui
+    #email = qianjigui@gmail.com
 [color]
     ui = auto
 [alias]
