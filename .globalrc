@@ -31,9 +31,9 @@
 # Configuration for gtags(1)
 # See gtags(1).
 #---------------------------------------------------------------------
-common:\
-	:skip=GPATH,GTAGS,GRTAGS,GSYMS,HTML/,HTML.pub/,html/,tags,TAGS,ID,y.tab.c,y.tab.h,.notfunction,cscope.out,cscope.po.out,cscope.in.out,.gdbinit,SCCS/,RCS/,CVS/,CVSROOT/,{arch}/,.svn/,.git/,.cvsrc,.cvsignore,.gitignore,.cvspass,.cvswrappers,.deps/,autom4te.cache/,.snprj/:\
-	:langmap=c\:.c.h,yacc\:.y,asm\:.s.S,java\:.java.rb,cpp\:.c++.cc.cpp.cxx.hxx.hpp.C.H,php\:.php.php3.phtml:
+#common:\
+#	:skip=GPATH,GTAGS,GRTAGS,GSYMS,HTML/,HTML.pub/,html/,tags,TAGS,ID,y.tab.c,y.tab.h,.notfunction,cscope.out,cscope.po.out,cscope.in.out,.gdbinit,SCCS/,RCS/,CVS/,CVSROOT/,{arch}/,.svn/,.git/,.cvsrc,.cvsignore,.gitignore,.cvspass,.cvswrappers,.deps/,autom4te.cache/,.snprj/:\
+#	:langmap=c\:.c.h,yacc\:.y,asm\:.s.S,java\:.java.rb,cpp\:.c++.cc.cpp.cxx.hxx.hpp.C.H,php\:.php.php3.phtml:
 # We need to change some of the output that rtags dumps
 #
 # Module::Submodule is NOT found by global (don't know why)
@@ -52,11 +52,11 @@ common:\
 # So we need to to this:
 # rtags -x %s | awk '{ sub(/^::/, "") ; sub(/::/, ":"); sub(/\\./, "#", $1); print}'
 #
-default:\
-	:tc=common:\
-	:suffixes=s,a,sa,asm,C,H,cpp,cxx,hxx,hpp,cc,c,h,y,rb:\
-	:extractmethod:\
-	:GTAGS=rtags -x %s | awk '{ sub(/^\:\:/, "") ; sub(/\:\:/, "\:"); sub(/\\./, "#", $1); print}':\
-	:GRTAGS=gtags-parser -dtr %s:\
-	:GSYMS=gtags-parser -dts %s:
+#default:\
+#	:tc=common:\
+#	:suffixes=s,a,sa,asm,C,H,cpp,cxx,hxx,hpp,cc,c,h,y,rb:\
+#	:extractmethod:\
+#	:GTAGS=rtags -x %s | awk '{ sub(/^\:\:/, "") ; sub(/\:\:/, "\:"); sub(/\\./, "#", $1); print}':\
+#	:GRTAGS=gtags-parser -dtr %s:\
+#	:GSYMS=gtags-parser -dts %s:
 #

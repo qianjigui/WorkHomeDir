@@ -119,6 +119,7 @@ map <F8> :TlistToggle<CR>
 
 let Gtags_Auto_Map=0
 let Gtags_OpenQuickfixWindow = 1
+let Gtags_Use_Tags_Format=1
 
 "在项目文件中搜索匹配的单词（忽略大小写）
 "nmap <F2> :Gtags -gi<cr>
@@ -127,7 +128,7 @@ let Gtags_OpenQuickfixWindow = 1
 "nmap <A-e> :Gtags -gi<CR><CR><CR>*.[ch]<CR>
 
 "跳转到光标所在函数的定义
-nmap <A-[> :Gtags<CR><CR>
+nmap <C-[> :Gtags<CR><CR>
 
 "搜索光标所在函数的引用
 nmap <A-r> :Gtags -r<CR><CR>
