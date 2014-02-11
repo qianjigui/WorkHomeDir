@@ -128,7 +128,7 @@ let Gtags_Use_Tags_Format=1
 "nmap <A-e> :Gtags -gi<CR><CR><CR>*.[ch]<CR>
 
 "跳转到光标所在函数的定义
-nmap <C-[> :Gtags<CR><CR>
+"nmap <C-[> :Gtags<CR><CR>
 
 "搜索光标所在函数的引用
 nmap <A-r> :Gtags -r<CR><CR>
