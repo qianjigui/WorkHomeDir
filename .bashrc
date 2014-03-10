@@ -9,10 +9,10 @@
 export HISTCONTROL=ignoredups:erasedups
 
 # After each command, save and reload history
-export PROMPT_COMMAND="history -a; history -c; history -r;"
+#export PROMPT_COMMAND="history -a; history -c; history -r;"
 
 # append to the history file, don't overwrite it
-shopt -s histappend
+#shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=8000
