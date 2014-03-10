@@ -10,3 +10,4 @@ plugins=(ruby tmux git)
 setopt append_history no_inc_append_history no_share_history
 bindkey -v
 export ZSH_THEME=blinks
+export DISABLE_AUTO_TITLE=true
