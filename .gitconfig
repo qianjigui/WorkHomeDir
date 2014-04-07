@@ -14,3 +14,5 @@
     template = ~/.gittemplate
 [core]
 	editor = /usr/bin/vim
+[http]
+	postBuffer = 524288000
