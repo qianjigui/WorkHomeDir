@@ -13,3 +13,7 @@ bindkey -v
 export ZSH_THEME=blinks
 export DISABLE_AUTO_TITLE=true
 bindkey '^R' history-incremental-search-backward
+
+__git_files () {
+    _wanted files expl 'local files' _files
+}
