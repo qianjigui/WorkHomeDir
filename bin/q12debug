@@ -2,8 +2,11 @@
 
 PREFIX=10.69.19.
 
+#ATM7029
+IP=69
+
 #MagicBox
-IP=156
+#IP=156
 
 #Q12
 #IP=115
