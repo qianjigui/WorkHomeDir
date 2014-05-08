@@ -14,4 +14,4 @@ do
     mv $i old_$i
 done
 
-$ADB logcat -v time | tee $FILE
+$ADB logcat -v long -b main -b system -b radio -b events | tee $FILE
