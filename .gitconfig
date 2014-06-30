@@ -14,5 +14,6 @@
     template = ~/.gittemplate
 [core]
 	editor = /usr/bin/vim
+	autocrlf = input
 [http]
 	postBuffer = 524288000
