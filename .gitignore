@@ -1,9 +1,14 @@
-*
+# Ignore other all files
+/*
 
+# Keep directory
 !.vim
+.vim/.netrwhist
 !.vimperator
 !.zshcustomrc
 !bin
+
+# Keep files
 !.bashrc
 !.gemrc
 !.gitconfig
