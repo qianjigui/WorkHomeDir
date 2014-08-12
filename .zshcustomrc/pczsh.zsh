@@ -6,7 +6,7 @@
 # curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 #
 
-plugins=(rails ruby tmux git)
+plugins=(rails ruby tmux git gradle command-not-found rake repo sudo)
 export EDITOR=vi
 setopt append_history no_inc_append_history no_share_history
 bindkey -v
