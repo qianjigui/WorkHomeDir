@@ -17,6 +17,7 @@ export HISTCONTROL=ignoredups:erasedups
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=8000
 HISTFILESIZE=16000
+HISTTIMEFORMAT="%Y/%m/%d %T "
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
