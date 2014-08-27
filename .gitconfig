@@ -17,3 +17,5 @@
     autocrlf = input
 [http]
     postBuffer = 524288000
+[push]
+	default = simple
