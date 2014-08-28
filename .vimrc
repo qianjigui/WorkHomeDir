@@ -8,6 +8,16 @@
 "endif
 colorscheme desert
 
+"==========
+" Add pathogen for bundle plugin
+"
+execute pathogen#infect()
+
+"=========
+" vim-go plugin
+let g:go_disable_autoinstall = 1
+
+
 "========================================================
 " Font size
 "========================================================
@@ -18,6 +28,7 @@ if has("gui_running")
     set guifont=Consolas:h13:cANSI
   endif
 endif
+
 
 "========================================================
 " Set the filetype
@@ -178,3 +189,5 @@ let g:showmarks_enable=0
 "Markdown"
 let g:vim_markdown_folding_disabled=0
 let g:vim_markdown_initial_foldlevel=1
+
+
