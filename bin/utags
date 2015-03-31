@@ -1,13 +1,10 @@
 #!/bin/bash
 
 cd `pwd`
-echo 'Update GTAGS...'
-if [ -f GTAGS ]; then
-    global -u
-else
-    gtags
-fi
-echo 'Finish GTAGS.'
-echo 'Update CTAGS...'
-ctags -R
-echo 'Finish CTAGS.'
+
+
+GTAG_LIST_FILES=/tmp/GTAGS.dir.FILES
+find . -type f -print > $GTAG_LIST_FILES
+echo "Generate gtags"
+gtags -f $GTAG_LIST_FILES
+echo "Please update gtags by: global -u"
