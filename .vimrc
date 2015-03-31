@@ -51,7 +51,7 @@ filetype plugin on
 " Set the vim for the dictionary and other basic setting
 " =======================================================
 "设置文件浏览器目录为当前目录
-set autochdir
+"set autochdir
 "设置编码
 set enc=utf-8
 "设置文件编码
@@ -132,6 +132,16 @@ map <F8> :TlistToggle<CR>
 
 "=========================Gtags==========================="
 
+" cscope
+set cscopetag                  " 使用 cscope 作为 tags 命令
+set cscopeprg='gtags-cscope'   " 使用 gtags-cscope 代替 cscope
+
+
+" gtags
+let GtagsCscope_Auto_Load = 1
+let CtagsCscope_Auto_Map = 1
+let GtagsCscope_Quiet = 1
+
 let Gtags_Auto_Map=0
 let Gtags_OpenQuickfixWindow = 1
 let Gtags_Use_Tags_Format=1
@@ -146,8 +156,8 @@ let Gtags_Use_Tags_Format=1
 "nmap <C-[> :Gtags<CR><CR>
 
 "搜索光标所在函数的引用
-nmap <A-r> :Gtags -r<CR><CR>
-nmap <leader>g :Gtags 
+"nmap <A-r> :Gtags -r<CR><CR>
+"nmap <leader>g :Gtags 
 
 
 "===============================================
