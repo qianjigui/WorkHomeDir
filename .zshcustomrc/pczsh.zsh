@@ -22,7 +22,7 @@ __git_files () {
 ###for bash
 #Golang
 
-if [ -z ${GOROOT+x}]; then
+if [ -z ${GOROOT+x} ]; then
     #For mac
     MAC_GO_ROOT=/usr/local/go
     if [ -d $MAC_GO_ROOT ]; then
