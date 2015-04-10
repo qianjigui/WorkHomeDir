@@ -6,7 +6,7 @@
 # curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 #
 
-plugins=(rails ruby tmux git gradle command-not-found rake)
+plugins=(rails ruby tmux git gradle command-not-found rake go)
 export EDITOR=vi
 setopt append_history no_inc_append_history no_share_history
 bindkey -v
@@ -18,3 +18,16 @@ export HIST_STAMPS="mm/dd/yyyy"
 __git_files () {
     _wanted files expl 'local files' _files
 }
+
+###for bash
+#Golang
+
+if [ -z ${GOROOT+x}]; then
+    #For mac
+    MAC_GO_ROOT=/usr/local/go
+    if [ -d $MAC_GO_ROOT ]; then
+        export PATH=$PATH:$MAC_GO_ROOT/bin
+        export GOROOT=$MAC_GO_ROOT
+    fi
+fi
+
