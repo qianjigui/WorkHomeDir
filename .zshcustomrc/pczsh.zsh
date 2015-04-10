@@ -31,3 +31,9 @@ if [ -z ${GOROOT+x}]; then
     fi
 fi
 
+#Android SDK
+SDK_DIR=$HOME/Library/Android/sdk/platform-tools/
+if [ -d $SDK_DIR ]; then
+    export PATH=$PATH:$SDK_DIR
+fi
+
