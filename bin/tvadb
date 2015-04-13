@@ -25,7 +25,14 @@ fi
 CONF=/tmp/minicom${TIMESTAMP}.dlf
 cat<<END > $CONF
 # Machine-generated file - use "minicom -s" to change parameters.
-pu port             /dev/ttyUSB${IP}
+
+# For ubuntu 12.04
+# pu port             /dev/ttyUSB${IP}
+
+# For Mac Air
+# The Driver : https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx
+pu port               /dev/tty.SLAB_USBtoUART
+
 pu rtscts           No
 pu xonxoff          No
 END
