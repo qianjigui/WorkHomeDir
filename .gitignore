@@ -11,6 +11,11 @@
 .vimperator/info/default/local-marks
 .vimperator/info/default/macros
 
+#Mac AutoMator Services
+!Library
+Library/*
+!Library/Services
+
 !.zshcustomrc
 !bin
 
