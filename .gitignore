@@ -15,6 +15,7 @@
 !Library
 Library/*
 !Library/Services
+.DS_Store
 
 !.zshcustomrc
 !bin
