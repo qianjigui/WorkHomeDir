@@ -19,13 +19,15 @@ __git_files () {
     _wanted files expl 'local files' _files
 }
 
+echo "WPC zsh script setting"
 ###for bash
 #Golang
 
-if [ -z ${GOROOT+x} ]; then
+if [ ! -z ${GOROOT+x} ]; then
     #For mac
     MAC_GO_ROOT=/usr/local/go
     if [ -d $MAC_GO_ROOT ]; then
+        echo "Add golang"
         export PATH=$PATH:$MAC_GO_ROOT/bin
         export GOROOT=$MAC_GO_ROOT
     fi
@@ -34,6 +36,7 @@ fi
 #Android SDK
 SDK_DIR=$HOME/Library/Android/sdk/platform-tools/
 if [ -d $SDK_DIR ]; then
+    echo "Add Android SDK"
     export PATH=$PATH:$SDK_DIR
 fi
 
