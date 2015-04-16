@@ -45,3 +45,8 @@ command -nargs=1 -description='Search android code' androidsrc tabopen http://an
 
 set gui=none
 
+"for mac os
+set editor='bash -lc "mvim -f \$*" mvim '
+"for linux"
+"set editor='bash -lc "gvim -f \$*" gvim '
+
