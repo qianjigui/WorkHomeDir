@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>C75C1415-30E1-4A68-8F69-6FB1CF2F3F0C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FEF8C8D9-C841-445D-B9AE-C9EF860FCC80</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>WPC</string>
+	<key>description</key>
+	<string>Switch firefox</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>GotoFirefox</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Firefox.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>FEF8C8D9-C841-445D-B9AE-C9EF860FCC80</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ff</string>
+				<key>subtext</key>
+				<string>Switch to firefox browser</string>
+				<key>text</key>
+				<string>Goto Firefox</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C75C1415-30E1-4A68-8F69-6FB1CF2F3F0C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>C75C1415-30E1-4A68-8F69-6FB1CF2F3F0C</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>FEF8C8D9-C841-445D-B9AE-C9EF860FCC80</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.5wpc.info</string>
+</dict>
+</plist>
