@@ -173,7 +173,7 @@
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>2</integer>
+				<integer>1</integer>
 				<key>keyword</key>
 				<string>ww</string>
 				<key>subtext</key>
@@ -222,6 +222,7 @@ end alfred_script
         tell application "System Events"
             tell process "AliWangwang"
                 keystroke "f" using {command down, shift down}
+                keystroke q
             end tell
         end tell
     end tell
