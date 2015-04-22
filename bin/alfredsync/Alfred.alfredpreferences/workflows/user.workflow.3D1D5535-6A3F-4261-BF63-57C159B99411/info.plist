@@ -216,7 +216,16 @@ end alfred_script
 				<key>applescript</key>
 				<string>on alfred_script(q)
   -- your script here
-  changeInputLanguage("搜狗五笔")
+  -- changeInputLanguage("搜狗五笔")
+    tell application "AliWangwang"
+        activate
+        tell application "System Events"
+            tell process "AliWangwang"
+                keystroke "f" using {command down, shift down}
+            end tell
+        end tell
+    end tell
+
 end alfred_script
 
 on changeInputLanguage(L)	tell application "System Events" to tell process "SystemUIServer"		tell (1st menu bar item of menu bar 1 whose value of attribute "AXDescription" is "text input")			return {its value, click, click menu 1's menu item L}		end tell	end tellend changeInputLanguage</string>
