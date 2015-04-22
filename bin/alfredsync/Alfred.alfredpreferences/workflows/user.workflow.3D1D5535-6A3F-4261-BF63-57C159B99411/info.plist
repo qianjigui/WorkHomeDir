@@ -3,11 +3,49 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>wpcutil</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
+		<key>0F4B4E0A-14D3-4BCA-AD22-C65CCAD5F954</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B9C55C35-4389-44DC-9A43-F8EA2AB0790E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A24ADA26-36F3-4A65-96F2-EB26EAF1AEB3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>932A2B7B-77B6-4166-ACCB-B900D77583CF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6F15D06E-4AC4-486F-95EB-ABBA0DBA3F13</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>86FB88AD-82E1-41D2-9C04-5B30E2488853</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>C562B8B4-B90F-4C15-96E8-A5E976C87EF7</key>
 		<array>
 			<dict>
@@ -35,9 +73,30 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>USTerminal</string>
+	<string>AppSwitchWithInputSource</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>tt</string>
+				<key>subtext</key>
+				<string>Open Terminal and switch input source to US</string>
+				<key>text</key>
+				<string>Goto Terminal</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C562B8B4-B90F-4C15-96E8-A5E976C87EF7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -58,21 +117,76 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Firefox.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>6F15D06E-4AC4-486F-95EB-ABBA0DBA3F13</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>tt</string>
+				<string>ff</string>
 				<key>subtext</key>
-				<string>Open Terminal and switch input source to US</string>
+				<string>Switch to firefox browser</string>
 				<key>text</key>
-				<string>USTerminal</string>
+				<string>Goto Firefox</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>C562B8B4-B90F-4C15-96E8-A5E976C87EF7</string>
+			<string>932A2B7B-77B6-4166-ACCB-B900D77583CF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/AliWangwang.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>B9C55C35-4389-44DC-9A43-F8EA2AB0790E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ww</string>
+				<key>subtext</key>
+				<string>Switch to wangwang</string>
+				<key>text</key>
+				<string>Goto Wangwang</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>0F4B4E0A-14D3-4BCA-AD22-C65CCAD5F954</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -96,25 +210,70 @@ end alfred_script
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  -- your script here
+  changeInputLanguage("搜狗五笔")
+end alfred_script
+
+on changeInputLanguage(L)	tell application "System Events" to tell process "SystemUIServer"		tell (1st menu bar item of menu bar 1 whose value of attribute "AXDescription" is "text input")			return {its value, click, click menu 1's menu item L}		end tell	end tellend changeInputLanguage</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>A24ADA26-36F3-4A65-96F2-EB26EAF1AEB3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>0F4B4E0A-14D3-4BCA-AD22-C65CCAD5F954</key>
+		<dict>
+			<key>ypos</key>
+			<real>290</real>
+		</dict>
 		<key>2C67BDE1-024A-4768-A02B-10A09004C9AA</key>
 		<dict>
 			<key>ypos</key>
 			<real>30</real>
 		</dict>
+		<key>6F15D06E-4AC4-486F-95EB-ABBA0DBA3F13</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
 		<key>86FB88AD-82E1-41D2-9C04-5B30E2488853</key>
 		<dict>
 			<key>ypos</key>
-			<real>150</real>
+			<real>430</real>
+		</dict>
+		<key>932A2B7B-77B6-4166-ACCB-B900D77583CF</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
+		<key>A24ADA26-36F3-4A65-96F2-EB26EAF1AEB3</key>
+		<dict>
+			<key>ypos</key>
+			<real>550</real>
+		</dict>
+		<key>B9C55C35-4389-44DC-9A43-F8EA2AB0790E</key>
+		<dict>
+			<key>ypos</key>
+			<real>290</real>
 		</dict>
 		<key>C562B8B4-B90F-4C15-96E8-A5E976C87EF7</key>
 		<dict>
 			<key>ypos</key>
-			<real>80</real>
+			<real>30</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
