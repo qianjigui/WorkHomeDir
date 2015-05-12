@@ -10,5 +10,7 @@
 	<true/>
 	<key>ignoreSource</key>
 	<true/>
+	<key>runAppleScripts</key>
+	<false/>
 </dict>
 </plist>
