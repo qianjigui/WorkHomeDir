@@ -27,10 +27,18 @@ Plugin 'Townk/vim-autoclose'
 "Auto Complete
 "Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
 
 "Support IDE on languages
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'fatih/vim-go'
+
+"Support filetype
+Plugin 'tfnico/vim-gradle'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'tmux-plugins/vim-tmux'
+Plugin 'diefans/vim-da-yaml'
+
 
 
 " All of your Plugins must be added before the following line
