@@ -20,4 +20,6 @@ then
     __git_files () {
         _wanted files expl 'local files' _files
     }
+    #invoke at the end of .zshrc
+    #set -o vi
 fi
