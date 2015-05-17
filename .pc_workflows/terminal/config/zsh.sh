@@ -6,8 +6,9 @@
 # curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 #
 
-if [ -z IS_ZSH ];
+if [ ! -z $IS_ZSH ];
 then
+    echo "Load zsh"
     plugins=(rails ruby tmux git gradle command-not-found rake go)
     export EDITOR=vi
     setopt append_history no_inc_append_history no_share_history

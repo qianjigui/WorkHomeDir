@@ -18,7 +18,6 @@ Library/*
 !bin
 
 # Keep files
-!.bashrc
 !.gemrc
 !.gitconfig
 !.gittemplate
