@@ -2,9 +2,6 @@
 /*
 
 # Keep directory
-!.vim
-.vim/.netrwhist
-
 !.vimperator
 .vimperator/info/default/history-command
 .vimperator/info/default/history-search

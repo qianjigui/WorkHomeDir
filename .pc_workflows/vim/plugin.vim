@@ -17,10 +17,20 @@ Plugin 'bkad/CamelCaseMotion'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'chrisbra/vim-diff-enhanced'
+Plugin 'tpope/vim-pathogen'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vimim/vimim'
+
+Plugin 'edsono/vim-matchit'
+Plugin 'Townk/vim-autoclose'
+
+"Auto Complete
+Plugin 'ervandew/supertab'
 
 "Support IDE on languages
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'fatih/vim-go'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
