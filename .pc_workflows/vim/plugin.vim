@@ -19,13 +19,14 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'chrisbra/vim-diff-enhanced'
 Plugin 'tpope/vim-pathogen'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vimim/vimim'
+"Plugin 'vimim/vimim'
 
 Plugin 'edsono/vim-matchit'
 Plugin 'Townk/vim-autoclose'
 
 "Auto Complete
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
 
 "Support IDE on languages
 Plugin 'vim-ruby/vim-ruby'

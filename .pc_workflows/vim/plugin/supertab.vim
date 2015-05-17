@@ -1,5 +1,5 @@
 "===============================
 "         Super tab
 "===============================
-let g:SuperTabSetDefaultCompletionType="context"
+"let g:SuperTabSetDefaultCompletionType="context"
 
