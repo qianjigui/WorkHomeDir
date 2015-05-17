@@ -28,7 +28,9 @@ Library/*
 !.profile
 !.tmux
 !.vimperatorrc
-!.vimrc
 !.gitignore
 
 !.alfred_workflow
+
+# Keep vim
+!.pc_workflows
