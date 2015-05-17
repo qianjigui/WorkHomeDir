@@ -161,31 +161,10 @@ set go-=m
 "Hidden the Tools
 set go-=T
 
-"No more than one buffer
-"let g:miniBufExplorerMoreThanOne=0
-
 "Tags, pathes for Coding
 set tags=./tags,../tags,../../tags,../../../tags,../../../../tags,./TAGS,../TAGS,../../../../../tags
 set path=.
 
-"===============================================
-"              Vim IM
-"===============================================
-":let g:vimim_cloud='qq.fuzzy'
-":let g:vimim_toggle=-1
-:let g:vimim_punctuation=-1
-
-"===============================
-"         Super tab
-"===============================
-let g:SuperTabSetDefaultCompletionType="context"
-
-"Show marks
-let g:showmarks_enable=0
-
-"Markdown"
-let g:vim_markdown_folding_disabled=0
-let g:vim_markdown_initial_foldlevel=1
 
 "Load vim plugins
 source $PCWF/vim/plugin.vim
