@@ -1,9 +1,0 @@
-#!/bin/bash
-
-PID=$(adb shell ps | grep $1 | awk "{print \$2}")
-
-if [ $? -eq 0 ];then
-    adb logcat -v time | grep $PID
-else
-    echo "Retry to find the process $1"
-fi

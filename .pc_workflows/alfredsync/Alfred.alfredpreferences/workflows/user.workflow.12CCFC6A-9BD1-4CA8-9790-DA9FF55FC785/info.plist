@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.samqiu.workflows.youdao</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>160E3B74-C1C8-4F4F-8E6E-A64B1CDC48FE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>96159F02-1880-4FCF-9B30-02652898058D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B831172E-379D-444D-AECE-4BA8D2A662DB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>samqiu</string>
+	<key>description</key>
+	<string>有道翻译</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Youdao</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>96159F02-1880-4FCF-9B30-02652898058D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>define</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>翻译中……</string>
+				<key>script</key>
+				<string>require_once('workflows.php');
+
+$w = new Workflows();
+$query = urlencode("{query}");
+ 
+$url = 'http://fanyi.youdao.com/openapi.do?keyfrom=Youdao-workflow&amp;key=1738796775&amp;type=data&amp;doctype=json&amp;version=1.1&amp;q=' . $query;
+$results = json_decode($w-&gt;request($url));
+
+foreach ($results-&gt;translation as $result) {
+    $w-&gt;result($result, $result, $result, $result, 'icon.png', '');
+}
+
+if (count($results-&gt;web) &gt; 0) {
+    foreach ($results-&gt;web as $web) {
+        $w-&gt;result('', implode(', ', $web-&gt;value), implode(', ', $web-&gt;value), $web-&gt;key, 'icon.png');
+    }
+}
+
+if (count($w-&gt;results()) == 0) {
+    $w-&gt;result('', '', '没有结果', '', 'icon.png', 'no');
+}
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>请输入需要翻译的中英文</string>
+				<key>title</key>
+				<string>有道翻译</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>160E3B74-C1C8-4F4F-8E6E-A64B1CDC48FE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Translation result copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B831172E-379D-444D-AECE-4BA8D2A662DB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>160E3B74-C1C8-4F4F-8E6E-A64B1CDC48FE</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>96159F02-1880-4FCF-9B30-02652898058D</key>
+		<dict>
+			<key>ypos</key>
+			<real>40</real>
+		</dict>
+		<key>B831172E-379D-444D-AECE-4BA8D2A662DB</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://samqiu.com/blog/youdao-workflow-for-alfred-v2</string>
+</dict>
+</plist>

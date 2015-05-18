@@ -42,3 +42,5 @@ pcwf_cmd() {
     fi
 }
 
+export PATH=$PATH:$PCWF/terminal/bin
+

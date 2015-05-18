@@ -3,30 +3,21 @@
 
 # Keep directory
 !.vimperator
+!.vimperatorrc
 .vimperator/info/default/history-command
 .vimperator/info/default/history-search
 .vimperator/info/default/local-marks
 .vimperator/info/default/macros
 
 #Mac AutoMator Services
-!Library
-Library/*
-!Library/Services
 .DS_Store
-
-!.zshcustomrc
-!bin
 
 # Keep files
 !.gemrc
 !.gitconfig
 !.gittemplate
 !.profile
-!.tmux
-!.vimperatorrc
 !.gitignore
 
-!.alfred_workflow
-
-# Keep vim
+# Keep workflows
 !.pc_workflows

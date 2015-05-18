@@ -1,0 +1,34 @@
+#!/bin/bash
+
+PREFIX=10.69.19.
+
+#ATM7029
+IP=69
+
+#MagicBox
+#IP=156
+
+#Q12
+#IP=115
+#IP=64
+#IP=8
+
+#magicbox
+#IP=36
+
+#Q5
+#IP=20
+#IP=156
+
+for i in `adb devices | grep 5555 | awk '{print $1}'`
+do
+    adb disconnect $i
+done
+
+if [ $# -eq 1 ];
+then
+    IP=$1
+fi
+
+adb connect $IP
+adb connect $PREFIX$IP
