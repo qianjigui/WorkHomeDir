@@ -13,9 +13,9 @@
 [commit]
     template = ~/.gittemplate
 [core]
-    editor = /usr/bin/vim
+    editor = vim
     autocrlf = input
 [http]
     postBuffer = 524288000
 [push]
-	default = simple
+    #default = simple
