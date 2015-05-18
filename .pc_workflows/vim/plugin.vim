@@ -28,6 +28,7 @@ Plugin 'Townk/vim-autoclose'
 "Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
+Plugin 'qianjigui/gtags.vim'
 
 "Support IDE on languages
 Plugin 'vim-ruby/vim-ruby'
