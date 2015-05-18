@@ -17,7 +17,6 @@ Plugin 'bkad/CamelCaseMotion'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'chrisbra/vim-diff-enhanced'
-Plugin 'tpope/vim-pathogen'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'vimim/vimim'
 

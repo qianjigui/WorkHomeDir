@@ -1,6 +1,7 @@
 
 " Search
-set incsearch ignorecase smartcase hlsearch
-"ignore the case when search"
-set ic
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
 
