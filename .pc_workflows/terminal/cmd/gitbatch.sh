@@ -8,3 +8,7 @@ a31StableDevDiff() {
     git fetch yunos && git diff --name-only yunos/allwinner/a31/4.4/stable2x yunos/allwinner/a31/4.4/dev2
 }
 
+opencodesubmit() {
+    ruby $PCWF/terminal/cmd/script/pengcheng.wang_submit.rb
+}
+
