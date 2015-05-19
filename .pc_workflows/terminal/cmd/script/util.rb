@@ -5,17 +5,36 @@
 
 require 'open3'
 
+class UIHelper
+    SPLIT='-'
+    def self.split
+        puts SPLIT*70
+    end
+
+    NEXT='* '
+    def self.nex
+        puts NEXT*3
+    end
+
+    def self.msg(*args)
+        print args.join('  ')
+    end
+
+    def self.msgln(*args)
+        puts args.join('  ')
+    end
+end
 class Log
     def self.i(*msg)
-        puts '[INFO] %s' % msg.join(' ')
+        UIHelper.msgln '[INFO] %s' % msg.join(' ')
     end
 
     def self.d(*msg)
-        puts '[DEBUG] %s' % msg.join(' ')
+        UIHelper.msgln '[DEBUG] %s' % msg.join(' ')
     end
 
     def self.e(*msg)
-        puts '[ERROR] %s' % msg.join(' ')
+        UIHelper.msgln '[ERROR] %s' % msg.join(' ')
     end
 end
 
@@ -53,23 +72,23 @@ class Runner
             when pattern
                 todo << {:data => item, :input=>input}
             end
-            puts '---------------------'
+            UIHelper.next
         end
         s = []
         if todo.size > 0
+            UIHelper.split
             todo.each do |item|
                 s << summary.call(item)
             end
-            puts '--------------------'
-            print s.join()
-            puts '--------------------'
-            print '* To Run: [yes], n[o]'
+            UIHelper.msgln(s.join())
+            UIHelper.msg('* To Run: [yes], n[o]')
             case gets.chomp
             when /^n/i
                 Log.i('No run')
             when
                 todo.each do |item|
                     answer.call(item)
+                    UIHelper.msgln 'OK'
                 end
             end
         end

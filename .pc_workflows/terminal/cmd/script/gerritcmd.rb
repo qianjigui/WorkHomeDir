@@ -55,6 +55,9 @@ class Gerrit
     end
 
     def submit(data)
+        if data.size <= 0
+            UIHelper.msgln 'No unsubmit patchset'
+        end
         @now = Time.now
         question = Proc.new do |item|
             print <<-END
@@ -99,6 +102,7 @@ P[#{item['project']}] B(#{item['branch']})
   PatchSet: #{input}. CreatedOn #{ago(set['createdOn'])} ago
                 END
             end
+            res
         end
         Runner.I.check_todo(data, question, answer, summary)
     end
