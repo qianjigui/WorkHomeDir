@@ -12,7 +12,7 @@ class UIHelper
     end
 
     NEXT='* '
-    def self.nex
+    def self.next
         puts NEXT*3
     end
 
