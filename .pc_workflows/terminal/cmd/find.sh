@@ -13,6 +13,7 @@ pcwf_findsrc() {
         -o -iname '*.mk' \
         -o -iname '*.rb' \
         -o -iname '*.go' \
+        -o -iname '*.py' \
         \) -print
 }
 
