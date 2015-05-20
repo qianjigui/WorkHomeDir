@@ -68,7 +68,7 @@ class Runner
         todo = []
         list.each do |item|
             pattern = question.call(item)
-            input = gets.chomp
+            input = $stdin.gets.chomp
             case input
             when pattern
                 todo << {:data => item, :input=>input}
@@ -83,7 +83,7 @@ class Runner
             end
             UIHelper.msgln(s.join())
             UIHelper.msg('* To Run: [yes], n[o]')
-            case gets.chomp
+            case $stdin.gets.chomp
             when /^n/i
                 Log.i('No run')
             when

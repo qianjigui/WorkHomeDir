@@ -5,7 +5,14 @@
 
 require_relative 'script/gerritcmd'
 
-c = Gerrit.new(29418, 'opencode.alibaba-inc.com')
+if ARGV.length!=2
+    Log.i('Please input: port url')
+    exit 1
+end
+
+port = ARGV[0]
+url = ARGV[1]
+c = Gerrit.new(port, url)
 data = c.query('status:open', 'owner:pengcheng.wang')
 c.submit(data)
 
