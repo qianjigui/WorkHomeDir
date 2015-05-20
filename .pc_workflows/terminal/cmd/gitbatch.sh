@@ -9,7 +9,7 @@ a31StableDevDiff() {
 }
 
 opencodesubmit() {
-    ruby $PCWF/terminal/cmd/script/pengcheng.wang_submit.rb
+    ruby $PCWF/terminal/cmd/pengcheng.wang_submit.rb
 }
 
 gitpushforreview() {
