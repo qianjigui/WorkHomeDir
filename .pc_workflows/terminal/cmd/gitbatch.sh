@@ -12,3 +12,7 @@ opencodesubmit() {
     ruby $PCWF/terminal/cmd/script/pengcheng.wang_submit.rb
 }
 
+gitpushforreview() {
+    ruby $PCWF/terminal/cmd/gitpushforreview.rb
+}
+

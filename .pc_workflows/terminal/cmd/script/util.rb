@@ -54,12 +54,13 @@ class Runner
         exit_status = wait_thr.value  # Process::Status object returned.
         case exit_status
         when 0
+            Log.d("STDERR", err)
             out
         else
             Log.i('Run ', cmd, 'exit', exit_status)
             Log.d("STDOUT", out)
             Log.d("STDERR", err)
-            exit exit_status
+            exit exit_status.to_i
         end
     end
 
