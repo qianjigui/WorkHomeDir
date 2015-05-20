@@ -21,3 +21,6 @@
 
 # Keep workflows
 !.pc_workflows
+GPATH
+GRTAGS
+GTAGS
