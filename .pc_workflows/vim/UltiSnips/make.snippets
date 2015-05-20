@@ -1,0 +1,40 @@
+
+snippet amk "Android.mk on opensouce" b
+LOCAL_PATH:= $(call my-dir)
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_TAGS := optional
+
+# This is the target being built.
+LOCAL_MODULE:= $0
+
+# All of the source files that we will compile.
+##LOCAL_SRC_FILES += $(call all-java-files-under, src tests)
+##LOCAL_SRC_FILES := $(call all-subdir-java-files)
+
+##LOCAL_SRC_FILES := $(call all-c-files-under,src tests)
+##LOCAL_SRC_FILES := $(call all-subdir-c-files)
+
+# All of the shared libraries we link against.
+LOCAL_SHARED_LIBRARIES := \
+	libutils liblog
+
+# No static libraries.
+LOCAL_STATIC_LIBRARIES :=
+
+# Also need the JNI headers.
+LOCAL_C_INCLUDES += \
+	$(JNI_H_INCLUDE)
+
+# No special compiler flags.
+LOCAL_CFLAGS +=
+
+include $(BUILD_SHARED_LIBRARY)
+include $(BUILD_STATIC_LIBRARY)
+include $(BUILD_EXECUTABLE)
+include $(BUILD_PACKAGE)
+include $(BUILD_STATIC_JAVA_LIBRARY)
+include $(BUILD_JAVA_LIBRARY)
+endsnippet
+
+# vim:ft=snippets:
