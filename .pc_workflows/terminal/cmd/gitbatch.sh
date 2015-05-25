@@ -9,11 +9,11 @@ a31StableDevDiff() {
 }
 
 opencodesubmit() {
-    ruby $PCWF/terminal/cmd/pengcheng.wang_submit.rb 29418 opencode.alibaba-inc.com
+    ruby $PCWF/terminal/cmd/pengcheng.wang_submit.rb 29418 pengcheng.wang@opencode.alibaba-inc.com
 }
 
 tvcodesubmit() {
-    ruby $PCWF/terminal/cmd/pengcheng.wang_submit.rb 29418 tvcode.alibaba-inc.com
+    ruby $PCWF/terminal/cmd/pengcheng.wang_submit.rb 29418 pengcheng.wang@tvcode.alibaba-inc.com
 }
 
 gerritsubmit() {
