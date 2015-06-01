@@ -1,5 +1,5 @@
 
-if [ -d $JAVA_HOME ];
+if [ -n $JAVA_HOME ];
 then
     echo 'Add Java'
     export PATH=$JAVA_HOME/bin:$PATH

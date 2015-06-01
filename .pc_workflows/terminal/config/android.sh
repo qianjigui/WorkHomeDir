@@ -1,4 +1,4 @@
-if [ -d $ANDROID_SDK_DIR ];
+if [ -n $ANDROID_SDK_DIR ];
 then
     ANDROID_PLATFORM_TOOLS=$ANDROID_SDK_DIR/platform-tools
     ANDROID_BUILD_TOOLS=$ANDROID_SDK_DIR/build-tools
