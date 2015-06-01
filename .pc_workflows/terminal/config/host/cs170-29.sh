@@ -1,7 +1,7 @@
 BIN=/OpenbaseBSPHome/bins
 
 
-for item in android-ndk-r10c android-sdk-linux/tools ruby2.1.2/bin vim/bin android-sdk-linux/build-tools/21.0.2 global6.4/bin
+for item in android-ndk-r10c ruby2.1.2/bin vim/bin global6.4/bin
 do
     if [ -d $BIN/$itme ];
     then
@@ -9,12 +9,27 @@ do
     fi
 done
 
-export JAVA_HOME=$BIN/jdk1.6.0_35
-export PATH=$JAVA_HOME/bin:$PATH
-
-export GOROOT=$BIN/go1.4.2
-export PATH=$GOROOT/bin:$PATH
-
 #For global
 export GTAGSLABEL=pygments
+
+#java
+_TMP=$BIN/jdk1.6.0_35
+if [ -d $_TMP ];
+then
+    export JAVA_HOME=$_TMP
+fi
+
+#Android
+_TMP=$BIN/android-sdk-linux
+if [ -d $_TMP ];
+then
+    export ANDROID_SDK_DIR=$_TMP
+fi
+
+#golang
+_TMP=$BIN/go1.4.2
+if [ -d $_TMP ];
+then
+    export GOROOT=$_TMP
+fi
 
