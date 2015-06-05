@@ -6,7 +6,6 @@
 	<array>
 		<string>features.websearch.google.fallback</string>
 		<string>features.websearch.custom.10C027A3-03D3-4F60-BF60-36B7A1B12F6C.fallback</string>
-		<string>features.websearch.gtranslate.fallback</string>
 		<string>features.websearch.custom.83E88849-7D26-4D00-94E4-4BEA9D930686.fallback</string>
 	</array>
 	<key>showContacts</key>
