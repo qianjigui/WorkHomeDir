@@ -1,1 +1,1 @@
-au VimEnter * RainbowBracketsToggle
+au BufEnter * RainbowBracketsOpen
