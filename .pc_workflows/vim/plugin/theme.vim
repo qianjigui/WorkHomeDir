@@ -12,10 +12,11 @@ colorscheme desert
 " Font size
 "========================================================
 if has("gui_running")
+  set guifont=Menlo\ Regular:h18
   if has("gui_gtk2")
-    set guifont=Inconsolata\ 13
+    set guifont=Inconsolata\ 14
   elseif has("gui_win32")
-    set guifont=Consolas:h13:cANSI
+    set guifont=Consolas:h14:cANSI
   endif
 endif
 
@@ -25,7 +26,7 @@ set ruler
 " Open the line number
 set number
 
-" show command 
+" show command
 set showcmd
 
 " show mode
