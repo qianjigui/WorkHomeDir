@@ -65,6 +65,25 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>C96EB045-E538-45C7-9EAC-8A11F5F92A66</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2E2ED9EB-036B-4CF4-A511-7FC315DEC87F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B9169CAA-0BC1-498B-A0F8-976113631710</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>WPC</string>
@@ -242,6 +261,76 @@ end alfred_script
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>qq</string>
+				<key>subtext</key>
+				<string>Switch to QQ</string>
+				<key>text</key>
+				<string>Goto QQ</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C96EB045-E538-45C7-9EAC-8A11F5F92A66</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/QQ.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>2E2ED9EB-036B-4CF4-A511-7FC315DEC87F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  -- your script here
+  -- changeInputLanguage("搜狗五笔")
+    tell application "QQ"
+        activate
+        tell application "System Events"
+            tell process "QQ"
+                if (count of q)&gt;0 then
+                    keystroke "f" using {command down, shift down}
+                    keystroke q
+                end if
+            end tell
+        end tell
+    end tell
+
+end alfred_script
+
+on changeInputLanguage(L)	tell application "System Events" to tell process "SystemUIServer"		tell (1st menu bar item of menu bar 1 whose value of attribute "AXDescription" is "text input")			return {its value, click, click menu 1's menu item L}		end tell	end tellend changeInputLanguage</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>B9169CAA-0BC1-498B-A0F8-976113631710</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -256,6 +345,11 @@ end alfred_script
 		<dict>
 			<key>ypos</key>
 			<real>30</real>
+		</dict>
+		<key>2E2ED9EB-036B-4CF4-A511-7FC315DEC87F</key>
+		<dict>
+			<key>ypos</key>
+			<real>670</real>
 		</dict>
 		<key>6F15D06E-4AC4-486F-95EB-ABBA0DBA3F13</key>
 		<dict>
@@ -277,6 +371,11 @@ end alfred_script
 			<key>ypos</key>
 			<real>550</real>
 		</dict>
+		<key>B9169CAA-0BC1-498B-A0F8-976113631710</key>
+		<dict>
+			<key>ypos</key>
+			<real>790</real>
+		</dict>
 		<key>B9C55C35-4389-44DC-9A43-F8EA2AB0790E</key>
 		<dict>
 			<key>ypos</key>
@@ -286,6 +385,11 @@ end alfred_script
 		<dict>
 			<key>ypos</key>
 			<real>30</real>
+		</dict>
+		<key>C96EB045-E538-45C7-9EAC-8A11F5F92A66</key>
+		<dict>
+			<key>ypos</key>
+			<real>670</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
