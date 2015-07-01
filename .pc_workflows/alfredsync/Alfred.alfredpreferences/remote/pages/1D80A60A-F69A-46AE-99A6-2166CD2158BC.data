@@ -53,51 +53,9 @@
 			<key>itemuid</key>
 			<string>B1D2A804-8215-469E-9570-5F9E43ABEA76</string>
 		</dict>
-		<dict>
-			<key>actionconfig</key>
-			<dict>
-				<key>url</key>
-				<string>https://www.youtube.com</string>
-			</dict>
-			<key>actionuid</key>
-			<string>remote.alfred.openurl</string>
-			<key>buttoniconid</key>
-			<string>52535B58-ABA9-41E7-8C65-A3E31C24531F</string>
-			<key>buttonlabel</key>
-			<string></string>
-			<key>itemuid</key>
-			<string>78E21F82-B250-42F2-BACB-F1714A14B90C</string>
-		</dict>
-		<dict>
-			<key>actionconfig</key>
-			<dict>
-				<key>url</key>
-				<string>http://www.apple.com</string>
-			</dict>
-			<key>actionuid</key>
-			<string>remote.alfred.openurl</string>
-			<key>buttoniconid</key>
-			<string>F0590DA0-0147-4087-8953-ABEAC5E29FD8</string>
-			<key>buttonlabel</key>
-			<string></string>
-			<key>itemuid</key>
-			<string>B19A1F88-12ED-4188-B5A6-956DCC0E8B54</string>
-		</dict>
-		<dict>
-			<key>actionconfig</key>
-			<dict>
-				<key>url</key>
-				<string>http://www.bbc.co.uk/news</string>
-			</dict>
-			<key>actionuid</key>
-			<string>remote.alfred.openurl</string>
-			<key>buttoniconid</key>
-			<string>2C56C2DA-60F7-45A4-95C2-F211580F781A</string>
-			<key>buttonlabel</key>
-			<string></string>
-			<key>itemuid</key>
-			<string>D9B0F465-B24E-4267-83A8-2DDDDD68FB52</string>
-		</dict>
+		<dict/>
+		<dict/>
+		<dict/>
 		<dict>
 			<key>actionconfig</key>
 			<dict>
