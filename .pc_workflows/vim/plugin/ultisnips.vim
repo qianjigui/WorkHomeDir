@@ -5,7 +5,8 @@ let g:UltiSnipsListSnippets="<C-Tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-l>"
 let g:UltiSnipsJumpBackwardTrigger="<C-m>"
 call UltiSnips#map_keys#MapKeys()
-let g:UltiSnipsSnippetsDir=expand("$PCWF/vim/UltiSnips")
+"By ln -s $PCWF/vim/UltiSnips $HOME/.vim/UltiSnips
+"let g:UltiSnipsSnippetsDir=expand("$PCWF/vim/UltiSnips")
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
