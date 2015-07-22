@@ -4,6 +4,8 @@
 #
 
 require 'open3'
+require 'yaml'
+require 'pathname'
 
 class UIHelper
     SPLIT='-'
@@ -35,6 +37,15 @@ class Log
 
     def self.e(*msg)
         UIHelper.msgln '[ERROR] %s' % msg.join(' ')
+    end
+end
+module GlobalConfig
+    extend self
+    def init(path)
+        @@config = YAML.load_file(path)
+    end
+    def [](v)
+        @@config[v]
     end
 end
 
@@ -96,3 +107,4 @@ class Runner
     end
 end
 
+GlobalConfig.init(Pathname.new(__FILE__).dirname+'../.config.yml')

@@ -1,0 +1,18 @@
+tvbuild:
+  server:
+    server_ip: xxx
+    server_port: '8080'
+    username: xxx
+    password: xxx
+rbuild:
+  server:
+    server_ip: xxx
+    server_port: '8080'
+    username: xxx
+    password: xxx
+sml:
+  server:
+    server_ip: xxx
+    server_port: '81'
+    username: xxx
+    password: xxx
