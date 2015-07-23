@@ -75,6 +75,18 @@ class Runner
         end
     end
 
+    #list: data array
+    #question: Proc.new
+    #          argument: 1, the item on the list
+    #          return: Pass pattern(regular)
+    #          Print a message to user for getting input
+    #summery: Proc.new
+    #         argument: 1, the item on the list
+    #         Print a summary  message for this pass item
+    #answer: Proc.new
+    #        argument: 1, {:data=>the item on the list, :input=>user input data}
+    #        Do the process on this pass item
+    #
     def check_todo(list, question, answer, summary)
         todo = []
         list.each do |item|
