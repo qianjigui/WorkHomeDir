@@ -119,4 +119,9 @@ class Runner
     end
 end
 
-GlobalConfig.init(Pathname.new(__FILE__).dirname+'../.config.yml')
+PCWF_CONFIG=Pathname.new(__FILE__).dirname+'../.config.yml'
+if PCWF_CONFIG.exist?
+    GlobalConfig.init(PCWF_CONFIG)
+else
+    Log.i('Ignore loading', PCWF_CONFIG)
+end
