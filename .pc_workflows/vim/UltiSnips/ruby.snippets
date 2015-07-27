@@ -11,4 +11,41 @@ snippet ruby "Ruby Script Header" b
 $0
 endsnippet
 
+snippet requirefiles "Ruby Script file gems" b
+require 'pathname'
+require 'fileutils'
+require 'yaml'
+
+CURRENT_DIR=Pathname.new(__FILE__).dirname
+
+$0
+endsnippet
+
+snippet cmdarguments "Check cmd arguments " b
+if ARGV.length != $1
+	puts <<-END
+	#{__FILE__} $0
+	END
+	exit 1
+end
+endsnippet
+
+
+snippet YAML "YAML load file" i
+YAML.load_file($1)
+$0
+endsnippet
+
+snippet def "Define a function" i
+def $1 ( $2 )
+$0
+end
+endsnippet
+
+snippet each "member each" i
+each do | $1 |
+	$0
+end
+endsnippet
+
 # vim:ft=snippets:
