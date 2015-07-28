@@ -24,3 +24,14 @@ gitpushforreview() {
     ruby $PCWF/terminal/cmd/gitpushforreview.rb
 }
 
+githubconfig() {
+    GIT_USERNAME=qianjigui
+    GIT_EMAIL=qianjigui@gmail.com
+    git config user.name $GIT_USERNAME
+    git config user.email $GIT_EMAIL
+
+    export GIT_AUTHOR_NAME=$GIT_USERNAME
+    export GIT_AUTHOR_GIT_EMAIL=$GIT_EMAIL
+    export GIT_COMMITTER_NAME=$GIT_USERNAME
+    export GIT_COMMITTER_GIT_EMAIL=$GIT_EMAIL
+}
