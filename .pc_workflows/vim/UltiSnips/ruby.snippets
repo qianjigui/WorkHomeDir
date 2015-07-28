@@ -42,9 +42,15 @@ YAML.load_file($1)
 $0
 endsnippet
 
-snippet def "Define a function" i
+snippet def "function defining" i
 def $1 ( $2 )
-$0
+	$0
+end
+endsnippet
+
+snippet class "class defining" i
+class ${1:classname}
+	${0:#statements}
 end
 endsnippet
 
