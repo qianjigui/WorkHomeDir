@@ -34,6 +34,21 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>E01321D2-13F8-4525-88E8-D4C63227B351</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ruby</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>Ruby Doc Search</string>
+			<key>url</key>
+			<string>http://ruby-doc.com/search.html?q={query}&amp;sa=Search</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
