@@ -4,3 +4,6 @@ let g:AutoClosePumvisible = {"ENTER": "<C-Y>", "ESC": "<ESC>"}
 "let g:ycm_autoclose_preview_window_after_insertion = 1
 set completeopt=menu,menuone
 let g:EclimCompletionMethod = 'omnifunc'
+
+"Open in all language
+let g:ycm_filetype_blacklist = {'notes': 1, 'unite': 1, 'tagbar': 1, 'pandoc': 1, 'qf': 1, 'vimwiki': 1, 'text': 1, 'infolog': 1, 'mail': 1}

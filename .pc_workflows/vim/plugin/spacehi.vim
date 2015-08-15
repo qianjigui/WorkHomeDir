@@ -7,4 +7,7 @@ autocmd BufNewFile,BufReadPost,FilterReadPost,FileReadPost,Syntax * SpaceHi
 autocmd FileType help NoSpaceHi
 
 "For golang tab
-autocmd FileType go let g:spacehi_tabcolor="ctermfg=White ctermbg=DarkBlue guifg=White guibg=DarkBlue"
+"autocmd FileType go let g:spacehi_tabcolor="ctermfg=White ctermbg=DarkBlue guifg=White guibg=DarkBlue"
+autocmd FileType go let g:spacehi_tabcolor="ctermfg=White ctermbg=DarkGray guifg=White guibg=DarkGray"
+autocmd BufRead,BufNewFile *.go set listchars=tab:\|\ ,trail:-
+
