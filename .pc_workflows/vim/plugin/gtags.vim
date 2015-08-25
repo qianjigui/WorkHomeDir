@@ -28,3 +28,4 @@ let Gtags_Use_Tags_Format=1
 "nmap <A-r> :Gtags -r<CR><CR>
 "nmap <leader>g :Gtags 
 
+cscope add GTAGS

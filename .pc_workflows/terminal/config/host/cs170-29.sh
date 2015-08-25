@@ -33,3 +33,6 @@ then
     export GOROOT=$_TMP
 fi
 
+#For Android ccache
+export USE_CCACHE=1
+export CCACHE_DIR=$HOME/disk2/data/CCache/
