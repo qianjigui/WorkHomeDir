@@ -27,7 +27,7 @@ then
 fi
 
 #golang
-_TMP=$BIN/go1.4.2
+_TMP=$BIN/go1.5.0
 if [ -d $_TMP ];
 then
     export GOROOT=$_TMP
