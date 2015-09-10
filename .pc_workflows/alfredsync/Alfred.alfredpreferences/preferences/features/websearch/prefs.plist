@@ -43,7 +43,7 @@
 			<key>plusSpaces</key>
 			<false/>
 			<key>text</key>
-			<string>Ruby Doc Search</string>
+			<string>Ruby Doc Search for {query}</string>
 			<key>url</key>
 			<string>http://ruby-doc.com/search.html?q={query}&amp;sa=Search</string>
 			<key>utf8</key>
