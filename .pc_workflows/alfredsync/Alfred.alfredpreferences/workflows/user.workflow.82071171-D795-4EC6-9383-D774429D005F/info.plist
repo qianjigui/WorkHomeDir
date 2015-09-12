@@ -48,7 +48,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>......</string>
+				<string>calculating.....</string>
 				<key>script</key>
 				<string>ruby datehelper.rb "{query}"</string>
 				<key>subtext</key>
