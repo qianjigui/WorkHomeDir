@@ -14,6 +14,25 @@ def day_of_month(y,m)
     Date.new(y,m,-1).day
 end
 
+def weekday_format(t)
+    '%d/%s' % [t.day, t.strftime('%a')]
+end
+
+def week_range(t)
+    res = []
+    u = t.strftime('%u').to_i
+    (1...u).each do |i|
+        n = Date.new(t.year,t.month,t.day-(u-i))
+        res << weekday_format(n)
+    end
+    res << '*%s*' % [weekday_format(t)]
+    ((u+1)..7).each do |i|
+        n = Date.new(t.year,t.month,t.day-(u-i))
+        res << weekday_format(n)
+    end
+    '[%s]' % [res.join(',')]
+end
+
 Alfred.with_friendly_error do |alfred|
   alfred.with_rescue_feedback = true
 
@@ -22,7 +41,7 @@ Alfred.with_friendly_error do |alfred|
   t = Time.now
 
   title = t.strftime('%F %T %z %A')
-  subtitle = '%s %.2fyear %.2fmonth' % [t.strftime('%jd/%Vw'), t.yday/365.0, t.mday*1.0/day_of_month(t.year, t.month)]
+  subtitle = '%s %s %.2fy %.2fm' % [t.strftime('%jd/%Vw'), week_range(t), t.yday/365.0, t.mday*1.0/day_of_month(t.year, t.month)]
   arg = '%s %s' % [title, subtitle]
 
   fb.add_item({title: title, subtitle: subtitle, arg: arg})
