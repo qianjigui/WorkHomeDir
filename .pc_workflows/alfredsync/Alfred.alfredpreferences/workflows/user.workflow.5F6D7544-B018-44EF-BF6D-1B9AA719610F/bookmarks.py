@@ -35,7 +35,8 @@ def regexp(pattern, item):
 def results(db, query):
     db.create_function("regexp", 2, regexp)
     found = set()
-    for result in db.execute(sql(query)):
+    ss = sql(query)
+    for result in db.execute(ss):
         if result in found:
             continue
         found.add(result)
@@ -43,25 +44,10 @@ def results(db, query):
         yield alfred.Item({u'uid': alfred.uid(uid), u'arg': url}, title, url, icon(db, faviconid))
 
 def sql(query):
-    keywords = u"""\
-select distinct moz_places.id, moz_bookmarks.title, moz_places.url, moz_places.favicon_id from moz_places
-inner join moz_bookmarks on moz_places.id = moz_bookmarks.fk
-inner join moz_keywords on moz_bookmarks.keyword_id = moz_keywords.id
-where %s""" % where(query, [u'moz_keywords.keyword'])
-
-    bookmarks = u"""\
-select distinct moz_places.id, moz_bookmarks.title, moz_places.url, moz_places.favicon_id from moz_places
-inner join moz_bookmarks on moz_places.id = moz_bookmarks.fk
-where %s""" % where(query, [u'moz_bookmarks.title', u'moz_places.url'])
-
     history = u"""\
 select distinct moz_places.id, moz_places.title, moz_places.url, moz_places.favicon_id from moz_places
-inner join moz_inputhistory on moz_places.id = moz_inputhistory.place_id
-where %s""" % where(query, [u'moz_inputhistory.input', u'moz_places.title', u'moz_places.url'])
-    joinTemplate = u"""\
-inner join %(table)s on moz_places.id = %(table)s.%(field)s
-"""
-    return u'\nunion\n'.join([keywords, bookmarks, history])
+where %s ORDER BY moz_places.last_visit_date DESC LIMIT 9""" % where(query, [u'moz_places.title', u'moz_places.url'])
+    return history
 
 def where(query, fields):
     return combine(u'or', ('%s regexp "%s"' % (field, '.*%s' % '.*'.join(re.escape(c) for c in query.split(' '))) for field in fields))
