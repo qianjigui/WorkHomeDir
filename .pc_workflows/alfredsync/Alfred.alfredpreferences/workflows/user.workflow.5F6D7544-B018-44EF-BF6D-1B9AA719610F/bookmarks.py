@@ -46,12 +46,19 @@ def results(db, query):
 def sql(query):
     history = u"""\
 select distinct moz_places.id, moz_places.title, moz_places.url, moz_places.favicon_id from moz_places
-where %s ORDER BY moz_places.last_visit_date DESC LIMIT 9""" % where(query, [u'moz_places.title', u'moz_places.url'])
+where (%s) AND (%s) ORDER BY moz_places.last_visit_date DESC LIMIT 9""" % (where(query, [u'moz_places.title', u'moz_places.url']), filterout(query) )
     return history
 
 def where(query, fields):
     return combine(u'or', ('%s regexp "%s"' % (field, '.*%s' % '.*'.join(re.escape(c) for c in query.split(' '))) for field in fields))
 
+def filterout(query):
+    return u""" NOT ( \
+        (moz_places.url LIKE '%www.baidu.com%' ) \
+        OR (moz_places.url LIKE '%www.google.com%' ) \
+        )"""
+
 (profile, query) = alfred.args()
+query = query.strip()
 db = sqlite3.connect(places(profile))
 alfred.write(alfred.xml(results(db, query), maxresults=_MAX_RESULTS))
