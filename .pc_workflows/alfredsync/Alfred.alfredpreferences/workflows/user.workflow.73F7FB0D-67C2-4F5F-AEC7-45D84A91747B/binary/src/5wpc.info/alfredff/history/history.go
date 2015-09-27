@@ -51,10 +51,10 @@ func IconKey(id int64, icons map[int64]string) string {
 var ESCAPE_CHARS = []string{" ", ";", "(", ")"}
 
 var BLANK_PAGE = Place{
-	sql.NullInt64{0, true},             //id
-	sql.NullString{"", true},           //url
-	sql.NullString{"Blank Page", true}, //url
-	sql.NullInt64{0, true},             //id
+	sql.NullInt64{0, true},                  //id
+	sql.NullString{"$HOME/Downloads", true}, //url
+	sql.NullString{"Blank Page", true},      //title
+	sql.NullInt64{0, true},                  //id
 }
 
 func Unescape(v string) string {
