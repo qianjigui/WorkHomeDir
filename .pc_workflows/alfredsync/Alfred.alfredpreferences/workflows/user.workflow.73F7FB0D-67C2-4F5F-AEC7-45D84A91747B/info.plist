@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>firefoxhistory.5wpc.info</string>
+	<key>category</key>
+	<string>Internet</string>
+	<key>connections</key>
+	<dict>
+		<key>C0D74878-CE5F-4062-A24C-95164A7209A4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0F5D2497-843D-4A03-BC54-C44F7F026AA4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>wpc</string>
+	<key>description</key>
+	<string>Search matched history in firefox</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>FirefoxHistorySearch</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>ffat</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Matching</string>
+				<key>script</key>
+				<string>./alfredff -db "$HOME/Library/Application Support/Firefox/Profiles" -bundleid "firefoxhistory.5wpc.info" -query "{query}"</string>
+				<key>subtext</key>
+				<string>Search matched history from firefox</string>
+				<key>title</key>
+				<string>Firefox History Matcher</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C0D74878-CE5F-4062-A24C-95164A7209A4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>0F5D2497-843D-4A03-BC54-C44F7F026AA4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Search firefox history</string>
+	<key>uidata</key>
+	<dict>
+		<key>0F5D2497-843D-4A03-BC54-C44F7F026AA4</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>C0D74878-CE5F-4062-A24C-95164A7209A4</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.5wpc.info</string>
+</dict>
+</plist>
