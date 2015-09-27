@@ -1,5 +1,5 @@
 all:
-	go install ./...
+	GOPATH=$(shell pwd) go install ./...
 	time ./bin/alfredff -db . -query "ott test"
 	ls -l /tmp/icon*
 
