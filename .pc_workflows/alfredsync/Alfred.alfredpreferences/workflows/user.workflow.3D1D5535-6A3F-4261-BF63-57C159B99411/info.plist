@@ -27,25 +27,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>932A2B7B-77B6-4166-ACCB-B900D77583CF</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>6F15D06E-4AC4-486F-95EB-ABBA0DBA3F13</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>86FB88AD-82E1-41D2-9C04-5B30E2488853</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>C562B8B4-B90F-4C15-96E8-A5E976C87EF7</key>
 		<array>
 			<dict>
@@ -130,44 +111,6 @@
 			<string>alfred.workflow.action.launchfiles</string>
 			<key>uid</key>
 			<string>2C67BDE1-024A-4768-A02B-10A09004C9AA</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>ff</string>
-				<key>subtext</key>
-				<string>Switch to firefox browser</string>
-				<key>text</key>
-				<string>Goto Firefox</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>932A2B7B-77B6-4166-ACCB-B900D77583CF</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/Firefox.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>6F15D06E-4AC4-486F-95EB-ABBA0DBA3F13</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -351,20 +294,10 @@ end alfred_script
 			<key>ypos</key>
 			<real>670</real>
 		</dict>
-		<key>6F15D06E-4AC4-486F-95EB-ABBA0DBA3F13</key>
-		<dict>
-			<key>ypos</key>
-			<real>160</real>
-		</dict>
 		<key>86FB88AD-82E1-41D2-9C04-5B30E2488853</key>
 		<dict>
 			<key>ypos</key>
-			<real>270</real>
-		</dict>
-		<key>932A2B7B-77B6-4166-ACCB-B900D77583CF</key>
-		<dict>
-			<key>ypos</key>
-			<real>160</real>
+			<real>170</real>
 		</dict>
 		<key>A24ADA26-36F3-4A65-96F2-EB26EAF1AEB3</key>
 		<dict>
