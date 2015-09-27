@@ -73,7 +73,7 @@ func Response(query, path, cachedir, bundleid string) {
 
 	query = strings.Join(strings.Split(strings.TrimSpace(query), " "), "%")
 
-	stmt := fmt.Sprintf("select distinct moz_places.id, moz_places.title, moz_places.url, moz_places.favicon_id from moz_places where ((moz_places.title LIKE '%%%s%%' or moz_places.url LIKE '%%%s%%')) AND ( NOT (         (moz_places.url LIKE '%%www.baidu.com%%' )         OR (moz_places.url LIKE '%%www.google.com%%' )         OR (moz_places.url LIKE 'file://%%'))) ORDER BY moz_places.last_visit_date DESC LIMIT 9", query, query)
+	stmt := fmt.Sprintf("SELECT DISTINCT moz_places.id, moz_places.title, moz_places.url, moz_places.favicon_id FROM moz_places WHERE ((moz_places.title LIKE '%%%s%%' OR moz_places.url LIKE '%%%s%%')) AND ( NOT (         (moz_places.url LIKE '%%www.baidu.com%%' )         OR (moz_places.url LIKE '%%www.google.com/search?q=%%' )         OR (moz_places.url LIKE 'file://%%'))) ORDER BY moz_places.last_visit_date DESC LIMIT 9", query, query)
 	rows, err := db.Query(stmt)
 
 	if err != nil {
