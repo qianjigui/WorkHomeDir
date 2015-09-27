@@ -12,7 +12,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>0F5D2497-843D-4A03-BC54-C44F7F026AA4</string>
+				<string>84FBDDC1-D4A1-46F6-9BED-857EABDEEE2E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -30,23 +30,6 @@
 	<string>FirefoxHistorySearch</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>0F5D2497-843D-4A03-BC54-C44F7F026AA4</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -84,12 +67,31 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>open -a "/Applications/Firefox.app" "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>84FBDDC1-D4A1-46F6-9BED-857EABDEEE2E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Search firefox history</string>
 	<key>uidata</key>
 	<dict>
-		<key>0F5D2497-843D-4A03-BC54-C44F7F026AA4</key>
+		<key>84FBDDC1-D4A1-46F6-9BED-857EABDEEE2E</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>

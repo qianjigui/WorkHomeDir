@@ -50,6 +50,13 @@ func IconKey(id int64, icons map[int64]string) string {
 
 var ESCAPE_CHARS = []string{" ", ";", "(", ")"}
 
+var BLANK_PAGE = Place{
+	sql.NullInt64{0, true},             //id
+	sql.NullString{"", true},           //url
+	sql.NullString{"Blank Page", true}, //url
+	sql.NullInt64{0, true},             //id
+}
+
 func Unescape(v string) string {
 	res := v
 	for i := 0; i < len(ESCAPE_CHARS); i++ {
@@ -66,7 +73,7 @@ func Response(query, path, cachedir, bundleid string) {
 
 	query = strings.Join(strings.Split(strings.TrimSpace(query), " "), "%")
 
-	stmt := fmt.Sprintf("select distinct moz_places.id, moz_places.title, moz_places.url, moz_places.favicon_id from moz_places where ((moz_places.title LIKE '%%%s%%' or moz_places.url LIKE '%%%s%%')) AND ( NOT (         (moz_places.url LIKE '%%www.baidu.com%%' )         OR (moz_places.url LIKE '%%www.google.com%%' )         )) ORDER BY moz_places.last_visit_date DESC LIMIT 9", query, query)
+	stmt := fmt.Sprintf("select distinct moz_places.id, moz_places.title, moz_places.url, moz_places.favicon_id from moz_places where ((moz_places.title LIKE '%%%s%%' or moz_places.url LIKE '%%%s%%')) AND ( NOT (         (moz_places.url LIKE '%%www.baidu.com%%' )         OR (moz_places.url LIKE '%%www.google.com%%' )         OR (moz_places.url LIKE 'file://%%/user.workflow.73F7FB0D-67C2-4F5F-AEC7-45D84A91747B%%'))) ORDER BY moz_places.last_visit_date DESC LIMIT 9", query, query)
 	rows, err := db.Query(stmt)
 
 	if err != nil {
@@ -74,6 +81,9 @@ func Response(query, path, cachedir, bundleid string) {
 	}
 
 	places := make([]Place, 0)
+	if strings.EqualFold("", query) {
+		places = append(places, BLANK_PAGE)
+	}
 	ids := make([]string, 0)
 	for rows.Next() {
 		place := new(Place)
