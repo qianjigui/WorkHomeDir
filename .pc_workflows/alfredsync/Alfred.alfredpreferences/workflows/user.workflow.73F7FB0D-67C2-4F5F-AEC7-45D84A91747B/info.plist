@@ -18,6 +18,14 @@
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>1ECAACFC-9F92-4A0C-92E9-AAC7AB5DF599</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
 		</array>
 	</dict>
 	<key>createdby</key>
@@ -86,11 +94,33 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/Firefox.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>1ECAACFC-9F92-4A0C-92E9-AAC7AB5DF599</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Search firefox history</string>
 	<key>uidata</key>
 	<dict>
+		<key>1ECAACFC-9F92-4A0C-92E9-AAC7AB5DF599</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
 		<key>84FBDDC1-D4A1-46F6-9BED-857EABDEEE2E</key>
 		<dict>
 			<key>ypos</key>
