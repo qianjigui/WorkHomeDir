@@ -50,13 +50,6 @@ func IconKey(id int64, icons map[int64]string) string {
 
 var ESCAPE_CHARS = []string{" ", ";", "(", ")"}
 
-var BLANK_PAGE = Place{
-	sql.NullInt64{0, true},                  //id
-	sql.NullString{"$HOME/Downloads", true}, //url
-	sql.NullString{"Blank Page", true},      //title
-	sql.NullInt64{0, true},                  //id
-}
-
 func Unescape(v string) string {
 	res := v
 	for i := 0; i < len(ESCAPE_CHARS); i++ {
@@ -90,9 +83,6 @@ func Response(query, path, cachedir, bundleid string) {
 	}
 
 	places := make([]Place, 0)
-	if strings.EqualFold("", query) {
-		places = append(places, BLANK_PAGE)
-	}
 	ids := make([]string, 0)
 	for rows.Next() {
 		place := new(Place)
@@ -128,6 +118,12 @@ func Response(query, path, cachedir, bundleid string) {
 	size := len(places)
 
 	resp := alfred.NewResponse()
+	if strings.EqualFold("", query) {
+		BLANK_PAGE_ITEM := new(alfred.AlfredResponseItem)
+		BLANK_PAGE_ITEM.Arg = "$HOME/Downloads"
+		BLANK_PAGE_ITEM.Title = "Blank Page"
+		resp.AddItem(BLANK_PAGE_ITEM)
+	}
 	for i := 0; i < size; i++ {
 		place := places[i]
 		item := new(alfred.AlfredResponseItem)

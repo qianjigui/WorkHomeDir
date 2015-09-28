@@ -20,14 +20,15 @@ end
 
 def week_range(t)
     res = []
+    today = Date.today
     u = t.strftime('%u').to_i
     (1...u).each do |i|
-        n = Date.new(t.year,t.month,t.day-(u-i))
+        n = today+i-u
         res << weekday_format(n)
     end
     res << '*%s*' % [weekday_format(t)]
     ((u+1)..7).each do |i|
-        n = Date.new(t.year,t.month,t.day-(u-i))
+        n = today+i-u
         res << weekday_format(n)
     end
     '[%s]' % [res.join(',')]
