@@ -56,7 +56,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Matching</string>
+				<string>Searching......</string>
 				<key>script</key>
 				<string>./alfredff -db "$HOME/Library/Application Support/Firefox/Profiles" -bundleid "firefoxhistory.5wpc.info" -query "{query}"</string>
 				<key>subtext</key>

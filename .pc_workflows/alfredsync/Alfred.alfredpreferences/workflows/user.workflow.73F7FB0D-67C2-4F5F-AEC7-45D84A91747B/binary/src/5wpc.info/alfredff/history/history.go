@@ -7,8 +7,10 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 	"io/ioutil"
 	"log"
+	"os"
 	"path/filepath"
 	"strings"
+	"time"
 )
 
 type Place struct {
@@ -26,9 +28,21 @@ func IconPath(cachedir string, id int64) string {
 	return fmt.Sprintf("%s/icon-%d.png", cachedir, id)
 }
 
+var NOW = time.Now().UnixNano()
+
+var CAHCE_ICON_DURATION = int64(time.Second * time.Duration(60*60*24))
+
 func CacheIcon(cachedir string, id int64, data sql.RawBytes) string {
 	path := IconPath(cachedir, id)
-	ioutil.WriteFile(path, data, 0644)
+	is_new := true
+	if fi, err := os.Stat(path); err == nil {
+		if (fi.ModTime().UnixNano() + CAHCE_ICON_DURATION) >= NOW {
+			is_new = false
+		}
+	}
+	if is_new {
+		ioutil.WriteFile(path, data, 0644)
+	}
 	return path
 }
 
@@ -44,7 +58,7 @@ func IconKey(id int64, icons map[int64]string) string {
 	if val, ok := icons[id]; ok {
 		return val
 	} else {
-		return "/tmp/icon-0.png"
+		return ""
 	}
 }
 
@@ -67,15 +81,19 @@ func Response(query, path, cachedir, bundleid string) {
 	query = strings.Join(strings.Split(strings.TrimSpace(query), " "), "%")
 
 	stmt := fmt.Sprintf(`
-	SELECT DISTINCT moz_places.id, moz_places.title, moz_places.url, moz_places.favicon_id
+	SELECT moz_places.id, moz_places.title, moz_places.url, moz_places.favicon_id
 	FROM moz_places
 	WHERE ((moz_places.title LIKE '%%%s%%' OR moz_places.url LIKE '%%%s%%'))
 	AND ( NOT (
 		   (moz_places.url LIKE '%%www.baidu.com%%' )
 		OR (moz_places.url LIKE '%%www.google.com/search?q=%%' )
+		OR (moz_places.url LIKE '%%www.google.com/url?%%' )
 		OR (moz_places.url LIKE 'file://%%')
 	) )
-	ORDER BY moz_places.last_visit_date DESC LIMIT 9`, query, query)
+	GROUP BY moz_places.title
+	ORDER BY max(moz_places.last_visit_date) DESC LIMIT 9`,
+		query, query)
+
 	rows, err := db.Query(stmt)
 
 	if err != nil {
