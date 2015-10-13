@@ -4,12 +4,31 @@
 <dict>
 	<key>disabledDefaultActions</key>
 	<dict>
+		<key>alfred.action.delete</key>
+		<true/>
 		<key>alfred.action.email</key>
 		<true/>
 		<key>alfred.action.emailto</key>
 		<true/>
 		<key>alfred.action.findsimilar</key>
 		<true/>
+		<key>alfred.action.move</key>
+		<true/>
+		<key>alfred.action.openterminalhere</key>
+		<true/>
 	</dict>
+	<key>finderSelectionHotkey</key>
+	<dict>
+		<key>key</key>
+		<integer>0</integer>
+		<key>mod</key>
+		<integer>0</integer>
+		<key>string</key>
+		<string></string>
+	</dict>
+	<key>showWithCtrl</key>
+	<false/>
+	<key>showWithFn</key>
+	<false/>
 </dict>
 </plist>
