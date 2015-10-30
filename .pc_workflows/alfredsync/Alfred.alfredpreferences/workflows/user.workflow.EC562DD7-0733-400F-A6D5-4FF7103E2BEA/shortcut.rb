@@ -5,33 +5,49 @@
 #Author: wpc
 #Email: qianjigui@gmail.com
 
-if ARGV.length != 2
+if ARGV.length != 4
     puts <<-END
     Usage:
-        #{__FILE__} <ShortCut.yml> <Query>
+        #{__FILE__} <ShortCut.yml> <History> <Query> <u/q>
+        u: update timestamp
+        q: query
     END
     exit 1
 end
 
-require 'rubygems' unless defined? Gem
-require 'alfred'
-require 'pathname'
-require 'fileutils'
 require 'yaml'
 
 cfg = ARGV[0]
-query=ARGV[1]
+timestamp=ARGV[1]
+times=nil
+begin
+    times = YAML.load_file(timestamp)
+rescue => e
+    times = {}
+end
+query=ARGV[2]
+opt  =ARGV[3]
 
+if opt.downcase=='u'
+    times[query] = Time.now.strftime('%s').to_i
+    File.open(timestamp, 'w') do |f|
+        f.print times.to_yaml
+    end
+    exit 0
+end
+
+require 'rubygems' unless defined? Gem
+require 'alfred'
 data = YAML.load_file(cfg)
 
 class ShortCut
-    attr_reader :arg, :keys, :weight, :name, :path
-    def initialize(name, parent, cfg, nodes, weight)
+    attr_reader :arg, :keys, :weight, :name, :path, :time
+    def initialize(name, parent, cfg, nodes, weight, times)
         @parent = parent
         @nodes = nodes
         @cfg = cfg
-        @arg = value
         @path= cpath
+        @arg = value
         @keys= labels(name)
         if @parent
             @name = @parent.name + '/' + name
@@ -39,6 +55,7 @@ class ShortCut
             @name = name
         end
         @weight=weight
+        @time = times[@arg] || 0
     end
 
     def arg?
@@ -78,13 +95,13 @@ class ShortCut
         v
     end
 
-    def nodes
+    def nodes(times)
         v = []
         if @nodes
             @nodes.each_with_index do |n, i|
-                i = ShortCut.new(n['name'], self, n['cfg'], n['nodes'], @weight*100+i)
+                i = ShortCut.new(n['name'], self, n['cfg'], n['nodes'], @weight*100+i, times)
                 v << i
-                v = v + i.nodes
+                v = v + i.nodes(times)
             end
         end
         v
@@ -95,13 +112,13 @@ class ShortCut
     end
 
     def <=>(b)
-        @weight<=>b.weight
+        [-@time, @weight]<=>[-b.time, b.weight]
     end
 end
 
-i = ShortCut.new('', nil, data['cfg'], data['nodes'], 1)
+i = ShortCut.new('', nil, data['cfg'], data['nodes'], 1, times)
 
-nodes = i.nodes
+nodes = i.nodes(times)
 
 words = []
 query.split(' ').each do |i|
