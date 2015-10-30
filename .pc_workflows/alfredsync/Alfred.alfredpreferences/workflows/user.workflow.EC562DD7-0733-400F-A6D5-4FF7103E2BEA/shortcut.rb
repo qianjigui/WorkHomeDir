@@ -150,8 +150,8 @@ Alfred.with_friendly_error do |alfred|
 
   fb = alfred.feedback
 
-  res.each do |r|
-      fb.add_item({title: r.name, subtitle: r.arg, arg: r.arg})
+  res.each_with_index do |r,i|
+      fb.add_item({title: r.name, subtitle: r.arg, arg: r.arg, icon: {name: ('%s/.pc_workflows/alfredsync/Alfred.alfredpreferences/resources/numbers/animal_number_%d.png' % [ENV['HOME'], i+1])}})
   end
 
   puts fb.to_alfred
