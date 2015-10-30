@@ -12,7 +12,26 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>E244FEC6-9942-4EC6-A9D8-BBE08A039FDB</string>
+				<string>D4587863-6426-44A3-8D50-65EBF39076DF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>AD7F47B8-3CE6-4B20-8A6D-A51DF3B1C8A7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>AD7F47B8-3CE6-4B20-8A6D-A51DF3B1C8A7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>63C53D0D-7412-43D8-BBC8-87C715785C5A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -33,15 +52,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
 				<true/>
-				<key>clipboardtext</key>
-				<string></string>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>CodeStyling</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>E244FEC6-9942-4EC6-A9D8-BBE08A039FDB</string>
+			<string>D4587863-6426-44A3-8D50-65EBF39076DF</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -72,17 +101,61 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>63C53D0D-7412-43D8-BBC8-87C715785C5A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>ruby codestyle.rb "{query}" | tee /tmp/bbbaaa.txt</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>AD7F47B8-3CE6-4B20-8A6D-A51DF3B1C8A7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>63C53D0D-7412-43D8-BBC8-87C715785C5A</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
 		<key>816667CB-E309-42DA-A6AE-856C215E2717</key>
 		<dict>
 			<key>ypos</key>
 			<real>90</real>
 		</dict>
-		<key>E244FEC6-9942-4EC6-A9D8-BBE08A039FDB</key>
+		<key>AD7F47B8-3CE6-4B20-8A6D-A51DF3B1C8A7</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>D4587863-6426-44A3-8D50-65EBF39076DF</key>
 		<dict>
 			<key>ypos</key>
 			<real>90</real>
