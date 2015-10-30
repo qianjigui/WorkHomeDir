@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>nshortcut.5wpc.info</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>BCF2D0E7-6D22-46D5-8003-597D35FA8C71</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>71D5055B-7EEA-41BF-AB8F-85DDCEE0EFEF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>wpc</string>
+	<key>description</key>
+	<string>ShortCut for current workflow</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>NowShortCut</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>n</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>ruby shortcut.rb $HOME/workspace/work/SelfDoc/res/NShortCut.yml "{query}"</string>
+				<key>subtext</key>
+				<string>Current workflow</string>
+				<key>title</key>
+				<string>Now to do</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>BCF2D0E7-6D22-46D5-8003-597D35FA8C71</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>71D5055B-7EEA-41BF-AB8F-85DDCEE0EFEF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Short Cut for current workflow</string>
+	<key>uidata</key>
+	<dict>
+		<key>71D5055B-7EEA-41BF-AB8F-85DDCEE0EFEF</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>BCF2D0E7-6D22-46D5-8003-597D35FA8C71</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>www.5wpc.info</string>
+</dict>
+</plist>
