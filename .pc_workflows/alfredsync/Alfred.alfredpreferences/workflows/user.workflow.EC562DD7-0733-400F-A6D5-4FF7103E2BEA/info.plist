@@ -41,25 +41,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>ruby shortcut.rb $HOME/workspace/work/SelfDoc/res/NShortCut.yml /tmp/alfrednshortcut.yml "{query}" u</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.script</string>
-			<key>uid</key>
-			<string>FDA1D29B-FAFE-4A96-954D-C11BA5A53B4E</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -91,6 +72,25 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>BCF2D0E7-6D22-46D5-8003-597D35FA8C71</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>ruby shortcut.rb $HOME/workspace/work/SelfDoc/res/NShortCut.yml /tmp/alfrednshortcut.yml "{query}" u</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>FDA1D29B-FAFE-4A96-954D-C11BA5A53B4E</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
