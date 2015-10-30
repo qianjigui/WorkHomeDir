@@ -4,7 +4,6 @@
 #
 #Author: wpc
 #Email: qianjigui@gmail.com
-#Created: 2015-10-29 14:13:26
 
 if ARGV.length != 2
     puts <<-END
@@ -26,12 +25,13 @@ query=ARGV[1]
 data = YAML.load_file(cfg)
 
 class ShortCut
-    attr_reader :arg, :keys, :weight, :name
+    attr_reader :arg, :keys, :weight, :name, :path
     def initialize(name, parent, cfg, nodes, weight)
         @parent = parent
         @nodes = nodes
         @cfg = cfg
         @arg = value
+        @path= cpath
         @keys= labels(name)
         if @parent
             @name = @parent.name + '/' + name
@@ -54,11 +54,22 @@ class ShortCut
         keys
     end
 
+    def cpath
+        v = @cfg['path']
+        unless v
+            v = 'undefined'
+        end
+        if @parent
+            v = '%s/%s' % [@parent.path, v]
+        end
+        v
+    end
+
     def value
         v = @cfg['arg']
         unless v
             if @parent
-                v = @parent.value + '/'
+                v = @parent.path + '/'
             else
                 v = ''
             end
