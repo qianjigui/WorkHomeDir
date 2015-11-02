@@ -131,7 +131,14 @@ res = []
 nodes.each do |n|
     f = true
     words.each do |w|
-        unless n.keys[w]
+        found  = false
+        n.keys.keys.each do |k|
+            if k.include?(w)
+                found = true
+                break
+            end
+        end
+        unless found
             f = false
             break
         end
