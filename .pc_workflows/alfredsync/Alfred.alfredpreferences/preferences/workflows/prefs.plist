@@ -3,11 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>defaultBundleId</key>
-	<string>firefoxhistory.5wpc.info</string>
+	<string>.5wpc.info</string>
 	<key>defaultCreatedBy</key>
 	<string>wpc</string>
-	<key>defaultReadme</key>
-	<string>Search firefox history</string>
 	<key>defaultWebsite</key>
 	<string>www.5wpc.info</string>
 	<key>warnondelete</key>

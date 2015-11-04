@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>firefoxhistory.5wpc.info</string>
+	<string>nshortcut.5wpc.info</string>
 	<key>category</key>
-	<string>Internet</string>
+	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
-		<key>C0D74878-CE5F-4062-A24C-95164A7209A4</key>
+		<key>BCF2D0E7-6D22-46D5-8003-597D35FA8C71</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>84FBDDC1-D4A1-46F6-9BED-857EABDEEE2E</string>
+				<string>FDA1D29B-FAFE-4A96-954D-C11BA5A53B4E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -20,7 +20,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>1ECAACFC-9F92-4A0C-92E9-AAC7AB5DF599</string>
+				<string>71D5055B-7EEA-41BF-AB8F-85DDCEE0EFEF</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -31,32 +31,13 @@
 	<key>createdby</key>
 	<string>wpc</string>
 	<key>description</key>
-	<string>Search matched history in firefox</string>
+	<string>ShortCut for current workflow</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>FirefoxHistorySearch</string>
+	<string>NowShortCut</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>open -a "/Applications/Firefox.app" "{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>84FBDDC1-D4A1-46F6-9BED-857EABDEEE2E</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -65,7 +46,7 @@
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>ff</string>
+				<string>n</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -75,58 +56,77 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Searching......</string>
+				<string>Loading...</string>
 				<key>script</key>
-				<string>./alfredff -db "$HOME/Library/Application Support/Firefox/Profiles" -bundleid "firefoxhistory.5wpc.info" -query "{query}"</string>
+				<string>ruby shortcut.rb $HOME/workspace/work/SelfDoc/res/NShortCut.yml /tmp/alfrednshortcut.yml "{query}" q</string>
 				<key>subtext</key>
-				<string>Search matched history from firefox</string>
+				<string>Current workflow</string>
 				<key>title</key>
-				<string>Firefox History Matcher</string>
+				<string>Now to do</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>C0D74878-CE5F-4062-A24C-95164A7209A4</string>
+			<string>BCF2D0E7-6D22-46D5-8003-597D35FA8C71</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/Firefox.app</string>
-				</array>
-				<key>toggle</key>
+				<key>concurrently</key>
 				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>ruby shortcut.rb $HOME/workspace/work/SelfDoc/res/NShortCut.yml /tmp/alfrednshortcut.yml "{query}" u</string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
+			<string>alfred.workflow.output.script</string>
 			<key>uid</key>
-			<string>1ECAACFC-9F92-4A0C-92E9-AAC7AB5DF599</string>
+			<string>FDA1D29B-FAFE-4A96-954D-C11BA5A53B4E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>71D5055B-7EEA-41BF-AB8F-85DDCEE0EFEF</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Search firefox history</string>
+	<string>Short Cut for current workflow</string>
 	<key>uidata</key>
 	<dict>
-		<key>1ECAACFC-9F92-4A0C-92E9-AAC7AB5DF599</key>
+		<key>71D5055B-7EEA-41BF-AB8F-85DDCEE0EFEF</key>
 		<dict>
 			<key>ypos</key>
-			<real>130</real>
+			<real>110</real>
 		</dict>
-		<key>84FBDDC1-D4A1-46F6-9BED-857EABDEEE2E</key>
+		<key>BCF2D0E7-6D22-46D5-8003-597D35FA8C71</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
-		<key>C0D74878-CE5F-4062-A24C-95164A7209A4</key>
+		<key>FDA1D29B-FAFE-4A96-954D-C11BA5A53B4E</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
