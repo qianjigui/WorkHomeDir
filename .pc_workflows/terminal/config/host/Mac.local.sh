@@ -26,3 +26,4 @@ export A31='/SSHFS/pengcheng.wang/projs/tvs/Openbase/A31S4.4/YOS2/EngVersion'
 export L='/SSHFS/pengcheng.wang/projs/tvs/Openbase/rockchip/L'
 export SelfDoc="$HOME/workspace/work/SelfDoc"
 export DL="$HOME/Downloads"
+export SL='/SSHFS/pengcheng.wang/work/seyunos'

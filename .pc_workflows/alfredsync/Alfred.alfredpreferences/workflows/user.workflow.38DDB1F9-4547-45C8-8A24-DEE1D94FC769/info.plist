@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>im.doit.quickforalfred</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>30A44743-A6ED-4F42-B7AA-05DD2F7BBA7C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7E7A91A6-63EC-4B8E-901B-A5E335B72384</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Doit.im</string>
+	<key>description</key>
+	<string>for International Server Use</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Quick Add to Doit.im</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	set t to "" -- all purpose variable holds various types of data
+
+	-- tell application "Keychain Access" to activate -- Bring this up so as to see what's happening in the keychain.
+	-- tell application "AppleScript Editor" to activate
+
+	set label to "Quick Add for Doit.im" --e        -- if omitted, service name is used as default label
+	set KeyKind to "Internet password" --e unless new type is "Internet password", then --n
+	-- set KeyKind to "Internet password" --e -- here for testing internet password items
+	set ServiceName to "Quick Add for Doit.im" --n
+	set AcctComments to "Doit.im Account and Password" --e
+	set t to GetAcctnameServicenameAndPwrdFromPwrdItem(label, KeyKind)
+	set AcctName to (item 1 of t)
+	set Acctpassword to (item 2 of t)
+	if AcctName is equal to "" then
+		display dialog "Please enter Doit.im username :" default answer ""
+		set AcctName to text returned of result
+		display dialog "Please enter Doit.im password :" default answer ""
+		set Acctpassword to text returned of result
+		set t to AddPwrdItemToKeychain(label, KeyKind, AcctName, ServiceName, Acctpassword, AcctComments)
+	end if
+	set tUUID to do shell script "uuidgen"
+	set shellscript to "curl -i --user \"" &amp; AcctName &amp; ":" &amp; Acctpassword &amp; "\" -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d '{\"title\":\"" &amp; q &amp; "\", \"uuid\":\"" &amp; tUUID &amp; "\", \"attribute\":\"inbox\"}' https://api.doit.im/api/4/tasks"
+	set result to do shell script shellscript
+	if result contains "HTTP/1.1 401 Unauthorized" then
+		DeletePwrdItemFromKeychain(label, KeyKind)
+		display dialog "Error! Please re-enter Doit.im username :" default answer ""
+		set AcctName to text returned of result
+		display dialog "Error! Please re-enter Doit.im password :" default answer ""
+		set Acctpassword to text returned of result
+		set t to AddPwrdItemToKeychain(label, KeyKind, AcctName, ServiceName, Acctpassword, AcctComments)
+		set shellscript to "curl -i --user " &amp; AcctName &amp; ":" &amp; Acctpassword &amp; " -H 'Content-Type: application/json' -H 'Accept: application/json' -X POST -d '{\"title\":\"" &amp; q &amp; "\", \"uuid\":\"" &amp; tUUID &amp; "\", \"attribute\":\"inbox\"}' https://api4.doit.im/2/tasks"
+		set result to do shell script shellscript
+	else
+		tell application "System Events"
+			set isRunning to ¬
+				(count of (every process whose bundle identifier is "com.Growl.GrowlHelperApp")) &gt; 0
+		end tell
+
+	end if
+end alfred_script
+
+on AddPwrdItemToKeychain(label, KeyKind, AcctName, ServiceName, Acctpassword, AcctComments)
+	-- Make UNIX happy by quoting everything:
+	set Qlabel to quoted form of label
+	set QKeyKind to quoted form of KeyKind
+	set QAcctName to quoted form of AcctName
+	set QServiceName to quoted form of ServiceName -- or server if it's an internet password being created
+	set QAcctpassword to quoted form of Acctpassword
+	set QAcctComments to quoted form of AcctComments
+
+	set retval to true
+
+	-- Unless specified, new items are added to the default, usually login, keychain.
+	-- add-generic-password [-h] [-a account] [-s service] [-w password] [options...] [keychain]
+	-- add-internet-password [-h] [-a account] [-s server] [-w password] [options...] [keychain]
+	try
+		if KeyKind is equal to "Internet password" then
+			set t to do shell script "security add-internet-password -a " &amp; QAcctName &amp; " -s " &amp; QServiceName &amp; " -w " &amp; QAcctpassword &amp; " -l " &amp; Qlabel &amp; " -j " &amp; QAcctComments
+		else
+			set t to do shell script "security add-generic-password -a " &amp; QAcctName &amp; " -s " &amp; QServiceName &amp; " -w " &amp; QAcctpassword &amp; " -l " &amp; Qlabel &amp; " -j " &amp; QAcctComments
+		end if
+	on error n --number n
+		display dialog n buttons {"OK"} default button 1 with title "Key Creation Error" with icon caution -- error number 45 is keychain entry already exists.
+		set retval to false
+	end try
+	return retval
+end AddPwrdItemToKeychain
+
+on GetAcctnameServicenameAndPwrdFromPwrdItem(label, KeyKind)
+	set retarray to {"", "", ""}
+	set Qlabel to quoted form of label
+	set oldelim to text item delimiters
+
+	try
+		if KeyKind is equal to "Internet password" then
+			set t to do shell script "security 2&gt;&amp;1 find-internet-password -gl " &amp; Qlabel
+		else
+			set t to do shell script "security 2&gt;&amp;1 find-generic-password -gl " &amp; Qlabel
+		end if
+		(*
+        That odd 2&gt;&amp;1 redirects password output from stderr to stdout so we can get to it along with everything else.
+        See Allan Odgaard's posting here:
+        http://blog.macromates.com/2006/keychain-access-from-shell/
+        *)
+
+		--display dialog t            -- Display raw data
+		(*
+           Output is messy, and needs to be parsed.
+           grep and friends could work here.
+           See http://www.maclovin.de/2010/02/access-os-x-keychain-from-terminal/
+           I'd rather use Applescript's text item delimiters here:
+       *)
+		set text item delimiters to "acct" -- Get Account name
+		set tlst to every text item of t
+		set acct to item 2 of tlst
+		set text item delimiters to "\""
+		set tlst to every text item of acct
+		set acct to item 3 of tlst
+
+		if KeyKind is equal to "Internet password" then -- Get Service name or Server
+			set text item delimiters to "srvr" -- server
+		else
+			set text item delimiters to "svce" -- service
+		end if
+		set tlst to every text item of t
+		set svcnam to item 2 of tlst
+		set text item delimiters to "\""
+		set tlst to every text item of svcnam
+		set svcnam to item 3 of tlst
+
+		set text item delimiters to "\"" -- Get Password
+		set tlst to every text item of t
+		set pw to item 2 of tlst
+		--display dialog pw
+
+		set retarray to {acct, pw, svcnam}
+	on error
+		--display dialog "Sorry, can't find your keychain item." buttons "OK" default button 1 with icon caution
+		set retarray to {"", "", ""}
+	end try
+
+	set text item delimiters to oldelim
+	return retarray
+end GetAcctnameServicenameAndPwrdFromPwrdItem
+on DeletePwrdItemFromKeychain(label, KeyKind)
+	set Qlabel to quoted form of label
+	set retval to true
+
+	try
+		if KeyKind is equal to "Internet password" then
+			set t to do shell script "security delete-internet-password -l " &amp; Qlabel
+		else
+			set t to do shell script "security delete-generic-password -l " &amp; Qlabel
+		end if
+	on error
+		set retval to false
+	end try
+
+	return retval
+end DeletePwrdItemFromKeychain
+
+
+</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7E7A91A6-63EC-4B8E-901B-A5E335B72384</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>qd</string>
+				<key>text</key>
+				<string>Quick Add to Doit.im</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>30A44743-A6ED-4F42-B7AA-05DD2F7BBA7C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>30A44743-A6ED-4F42-B7AA-05DD2F7BBA7C</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>7E7A91A6-63EC-4B8E-901B-A5E335B72384</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://doit.im</string>
+</dict>
+</plist>
