@@ -122,9 +122,9 @@
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>4</integer>
+				<integer>36</integer>
 				<key>script</key>
-				<string>ruby codestyle.rb "{query}" | tee /tmp/bbbaaa.txt</string>
+				<string>ruby codestyle.rb "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
