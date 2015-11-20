@@ -21,9 +21,13 @@ then
 fi
 
 #Env
-export A20='/SSHFS/pengcheng.wang/projs/tvs/Openbase/A20/2.xUserDebug'
-export A31='/SSHFS/pengcheng.wang/projs/tvs/Openbase/A31S4.4/YOS2/EngVersion'
-export L='/SSHFS/pengcheng.wang/projs/tvs/Openbase/rockchip/L'
+export RWPC='/SSHFS/pengcheng.wang'
+export  A20="$RWPC/projs/tvs/Openbase/A20/2.xUserDebug"
+export  A31="$RWPC/projs/tvs/Openbase/A31S4.4/YOS2/EngVersion"
+export    L="$RWPC/projs/tvs/Openbase/rockchip/L"
+export   SL="$RWPC/work/seyunos"
+export   PT="$RWPC/work/Porting/yunos_porting_doc"
+export   AD="$RWPC/work/adwords"
+
 export SelfDoc="$HOME/workspace/work/SelfDoc"
 export DL="$HOME/Downloads"
-export SL='/SSHFS/pengcheng.wang/work/seyunos'
