@@ -217,7 +217,7 @@
 				<key>plusspaces</key>
 				<false/>
 				<key>url</key>
-				<string>http://binary.aliyun.com/</string>
+				<string>http://binary.yunos.com/</string>
 				<key>utf8</key>
 				<true/>
 			</dict>
@@ -407,7 +407,7 @@
 				<key>plusspaces</key>
 				<false/>
 				<key>url</key>
-				<string>http://k3.alibaba-inc.com/issue?versionId=1187103</string>
+				<string>http://k3.alibaba-inc.com/issue?versionId=1245686</string>
 				<key>utf8</key>
 				<true/>
 			</dict>
