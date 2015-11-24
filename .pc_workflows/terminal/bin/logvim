@@ -1,0 +1,4 @@
+#!/bin/bash
+
+NAME=$(ls *.log | sort | tail -1)
+vim $NAME
