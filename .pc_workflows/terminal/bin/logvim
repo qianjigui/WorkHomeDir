@@ -1,4 +1,4 @@
 #!/bin/bash
 
-NAME=$(ls *.log | sort | tail -1)
+NAME=$(ls logcat*.log | sort | tail -1)
 vim $NAME
