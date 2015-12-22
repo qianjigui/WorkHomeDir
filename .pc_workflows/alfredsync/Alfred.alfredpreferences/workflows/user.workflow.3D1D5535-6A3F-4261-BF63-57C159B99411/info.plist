@@ -39,7 +39,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>86FB88AD-82E1-41D2-9C04-5B30E2488853</string>
+				<string>96007AEF-4F96-458A-A1E1-8061934D2B87</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -120,10 +120,11 @@
 				<key>applescript</key>
 				<string>on alfred_script(q)
   -- your script here
-  changeInputLanguage("U.S.")
+  -- changeInputLanguage("U.S.")
 end alfred_script
 
-on changeInputLanguage(L)	tell application "System Events" to tell process "SystemUIServer"		tell (1st menu bar item of menu bar 1 whose value of attribute "AXDescription" is "text input")			return {its value, click, click menu 1's menu item L}		end tell	end tellend changeInputLanguage</string>
+on changeInputLanguage(L)	tell application "System Events" to tell process "SystemUIServer"		tell (1st menu bar item of menu bar 1 whose value of attribute "AXDescription" is "text input")			return {its value, click, click menu 1's menu item L}		end tell	end tellend changeInputLanguage
+</string>
 				<key>cachescript</key>
 				<true/>
 			</dict>
@@ -137,17 +138,19 @@ end alfred_script
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/AliWangwang.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
+				<key>concurrently</key>
+				<true/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./xkbswitch -s -e US</string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>B9C55C35-4389-44DC-9A43-F8EA2AB0790E</string>
+			<string>96007AEF-4F96-458A-A1E1-8061934D2B87</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -175,10 +178,27 @@ end alfred_script
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/AliWangwang.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>B9C55C35-4389-44DC-9A43-F8EA2AB0790E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
-  -- your script here
-  -- changeInputLanguage("搜狗五笔")
+    -- your script here
+    -- changeInputLanguage("搜狗五笔")
     tell application "AliWangwang"
         activate
         tell application "System Events"
@@ -190,7 +210,6 @@ end alfred_script
             end tell
         end tell
     end tell
-
 end alfred_script
 
 on changeInputLanguage(L)	tell application "System Events" to tell process "SystemUIServer"		tell (1st menu bar item of menu bar 1 whose value of attribute "AXDescription" is "text input")			return {its value, click, click menu 1's menu item L}		end tell	end tellend changeInputLanguage</string>
@@ -282,7 +301,7 @@ end alfred_script
 		<key>0F4B4E0A-14D3-4BCA-AD22-C65CCAD5F954</key>
 		<dict>
 			<key>ypos</key>
-			<real>410</real>
+			<real>340</real>
 		</dict>
 		<key>2C67BDE1-024A-4768-A02B-10A09004C9AA</key>
 		<dict>
@@ -292,27 +311,32 @@ end alfred_script
 		<key>2E2ED9EB-036B-4CF4-A511-7FC315DEC87F</key>
 		<dict>
 			<key>ypos</key>
-			<real>670</real>
+			<real>770</real>
 		</dict>
 		<key>86FB88AD-82E1-41D2-9C04-5B30E2488853</key>
 		<dict>
 			<key>ypos</key>
-			<real>170</real>
+			<real>130</real>
+		</dict>
+		<key>96007AEF-4F96-458A-A1E1-8061934D2B87</key>
+		<dict>
+			<key>ypos</key>
+			<real>230</real>
 		</dict>
 		<key>A24ADA26-36F3-4A65-96F2-EB26EAF1AEB3</key>
 		<dict>
 			<key>ypos</key>
-			<real>550</real>
+			<real>460</real>
 		</dict>
 		<key>B9169CAA-0BC1-498B-A0F8-976113631710</key>
 		<dict>
 			<key>ypos</key>
-			<real>790</real>
+			<real>880</real>
 		</dict>
 		<key>B9C55C35-4389-44DC-9A43-F8EA2AB0790E</key>
 		<dict>
 			<key>ypos</key>
-			<real>410</real>
+			<real>340</real>
 		</dict>
 		<key>C562B8B4-B90F-4C15-96E8-A5E976C87EF7</key>
 		<dict>
@@ -322,7 +346,7 @@ end alfred_script
 		<key>C96EB045-E538-45C7-9EAC-8A11F5F92A66</key>
 		<dict>
 			<key>ypos</key>
-			<real>670</real>
+			<real>770</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

@@ -424,7 +424,8 @@
 				<key>applescript</key>
 				<string>on alfred_script(q)
   -- your script here
-  changeInputLanguage("U.S.")
+  -- changeInputLanguage("U.S.")
+  do shell script "$HOME/.pc_workflows/alfredsync/Alfred.alfredpreferences/workflows/user.workflow.3D1D5535-6A3F-4261-BF63-57C159B99411/xkbswitch -s -e US"
 end alfred_script
 
 on changeInputLanguage(L)	tell application "System Events" to tell process "SystemUIServer"		tell (1st menu bar item of menu bar 1 whose value of attribute "AXDescription" is "text input")			return {its value, click, click menu 1's menu item L}		end tell	end tellend changeInputLanguage</string>
