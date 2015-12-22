@@ -20,6 +20,13 @@ then
     export GOROOT=$_TMP
 fi
 
+#golang
+_TMP=/usr/local/vim74
+if [ -d $_TMP ];
+then
+    export LOCALVIM=$_TMP
+fi
+
 #Env
 export RWPC='/SSHFS/pengcheng.wang'
 export  A20="$RWPC/projs/tvs/Openbase/A20/2.xUserDebug"
