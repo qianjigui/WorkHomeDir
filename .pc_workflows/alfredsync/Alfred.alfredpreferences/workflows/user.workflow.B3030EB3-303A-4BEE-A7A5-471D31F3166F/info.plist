@@ -27,17 +27,6 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>82E5133A-F114-4C1D-9FD4-365C395B6DF1</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>FE7E3DAE-D8FF-4C84-AC14-4A1D11A10904</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>FE7E3DAE-D8FF-4C84-AC14-4A1D11A10904</key>
 		<array>
 			<dict>
@@ -63,6 +52,8 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>script</key>
@@ -162,6 +153,8 @@ else:
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>29221F47-9904-4EE7-AAF9-D300BAFAF2EF</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -175,23 +168,8 @@ else:
 			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
 			<string>162D1E3F-9D73-4C83-AD8C-869165521442</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>1</integer>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>82E5133A-F114-4C1D-9FD4-365C395B6DF1</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -202,6 +180,14 @@ else:
 				<integer>63</integer>
 				<key>keyword</key>
 				<string>short</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
 				<key>runningsubtext</key>
 				<string>Loading services list.</string>
 				<key>script</key>
@@ -254,6 +240,8 @@ print fb
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>FE7E3DAE-D8FF-4C84-AC14-4A1D11A10904</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -277,6 +265,8 @@ print fb
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>82524AB3-0487-48D7-9CB8-7A456D78F473</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -311,11 +301,6 @@ This workflow support URL shortener like (goo.gl, bit.ly, t.cn, j.mp, is.gd, v.g
 		<dict>
 			<key>ypos</key>
 			<real>130</real>
-		</dict>
-		<key>82E5133A-F114-4C1D-9FD4-365C395B6DF1</key>
-		<dict>
-			<key>ypos</key>
-			<real>10</real>
 		</dict>
 		<key>FE7E3DAE-D8FF-4C84-AC14-4A1D11A10904</key>
 		<dict>
