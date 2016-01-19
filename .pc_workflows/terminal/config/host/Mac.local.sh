@@ -38,3 +38,5 @@ export   AD="$RWPC/work/adwords"
 
 export SelfDoc="$HOME/workspace/work/SelfDoc"
 export DL="$HOME/Downloads"
+export MPCP="$HOME//workspace/work/micropcporting"
+
