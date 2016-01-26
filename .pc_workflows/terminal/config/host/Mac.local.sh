@@ -35,6 +35,7 @@ export    L="$RWPC/projs/tvs/Openbase/rockchip/L"
 export   SL="$RWPC/work/seyunos"
 export   PT="$RWPC/work/Porting/yunos_porting_doc"
 export   AD="$RWPC/work/adwords"
+export  MPC="$RWPC/work/MicroPC/BMWDev"
 
 export SelfDoc="$HOME/workspace/work/SelfDoc"
 export DL="$HOME/Downloads"
