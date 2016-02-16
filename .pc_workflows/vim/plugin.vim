@@ -41,6 +41,9 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'diefans/vim-da-yaml'
 
+"File/buffer search
+Plugin 'Shougo/unite.vim'
+
 
 
 " All of your Plugins must be added before the following line
