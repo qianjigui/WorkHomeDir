@@ -40,7 +40,7 @@ export CCACHE_DIR=$HOME/disk2/data/CCache/
 #Env
 export RWPC="$HOME"
 export  A20="$RWPC/projs/tvs/Openbase/A20/2.xUserDebug"
-export  A31="$RWPC/projs/tvs/Openbase/A31S4.4/YOS2/EngVersion"
+export  A31="$RWPC/projs/tvs/Openbase/A31S4.4/YOS2/Dev/Build"
 export    L="$RWPC/projs/tvs/Openbase/rockchip/L"
 export   SL="$RWPC/work/seyunos"
 export   PT="$RWPC/work/Porting/yunos_porting_doc"
