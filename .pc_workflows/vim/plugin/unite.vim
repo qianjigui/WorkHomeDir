@@ -1,1 +1,1 @@
-nnoremap <leader>b :Unite -start-insert file buffer <CR>
+nnoremap <leader>b :Unite -start-insert buffer file <CR>
