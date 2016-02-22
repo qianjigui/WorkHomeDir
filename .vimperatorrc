@@ -1,4 +1,3 @@
-set showtabline=0
 set defsearch=google
 colorscheme desert
 
@@ -50,3 +49,13 @@ set gui=none
 set editor='bash -lc "mvim -f \$*" mvim '
 "for linux"
 "set editor='bash -lc "gvim -f \$*" gvim '
+
+"Open statusline in fullscreen
+"autocmd Fullscreen .* js statusline.setVisibility(statusline.setVisibility.TOGGLE)
+:js << EOF
+function ToggleStatusLine(){
+    statusline.setVisibility(statusline.setVisibility.TOGGLE)
+}
+EOF
+noremap s :js ToggleStatusLine()<CR>s
+noremap S :js ToggleStatusLine()<CR>S
