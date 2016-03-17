@@ -19,6 +19,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>7E7A91A6-63EC-4B8E-901B-A5E335B72384</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9B2F435E-DB8C-4EC4-806A-2A24BCF4E3C6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Doit.im</string>
@@ -179,12 +190,37 @@ end DeletePwrdItemFromKeychain
 
 </string>
 				<key>cachescript</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.applescript</string>
 			<key>uid</key>
 			<string>7E7A91A6-63EC-4B8E-901B-A5E335B72384</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>......Finish</string>
+				<key>title</key>
+				<string>Quick Add to Doit.im</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>9B2F435E-DB8C-4EC4-806A-2A24BCF4E3C6</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -218,6 +254,11 @@ end DeletePwrdItemFromKeychain
 			<real>10</real>
 		</dict>
 		<key>7E7A91A6-63EC-4B8E-901B-A5E335B72384</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>9B2F435E-DB8C-4EC4-806A-2A24BCF4E3C6</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>

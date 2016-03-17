@@ -34,6 +34,21 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>BBFF8F02-0A1E-4F4C-99CA-57916FE31C3C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>zhsearch</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>知乎问题 {query}</string>
+			<key>url</key>
+			<string>https://www.zhihu.com/search?type=question&amp;q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>E01321D2-13F8-4525-88E8-D4C63227B351</key>
 		<dict>
 			<key>enabled</key>
