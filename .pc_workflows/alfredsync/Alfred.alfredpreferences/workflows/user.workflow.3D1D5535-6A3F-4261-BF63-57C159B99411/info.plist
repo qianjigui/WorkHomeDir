@@ -18,14 +18,6 @@
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>A24ADA26-36F3-4A65-96F2-EB26EAF1AEB3</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
 		</array>
 		<key>C562B8B4-B90F-4C15-96E8-A5E976C87EF7</key>
 		<array>
@@ -37,28 +29,12 @@
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>96007AEF-4F96-458A-A1E1-8061934D2B87</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
 		</array>
 		<key>C96EB045-E538-45C7-9EAC-8A11F5F92A66</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>2E2ED9EB-036B-4CF4-A511-7FC315DEC87F</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>B9169CAA-0BC1-498B-A0F8-976113631710</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -157,6 +133,23 @@ end alfred_script
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>paths</key>
+				<array>
+					<string>/Applications/AliWangwang.app</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>B9C55C35-4389-44DC-9A43-F8EA2AB0790E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>keyword</key>
@@ -172,23 +165,6 @@ end alfred_script
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>0F4B4E0A-14D3-4BCA-AD22-C65CCAD5F954</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>paths</key>
-				<array>
-					<string>/Applications/AliWangwang.app</string>
-				</array>
-				<key>toggle</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.launchfiles</string>
-			<key>uid</key>
-			<string>B9C55C35-4389-44DC-9A43-F8EA2AB0790E</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
