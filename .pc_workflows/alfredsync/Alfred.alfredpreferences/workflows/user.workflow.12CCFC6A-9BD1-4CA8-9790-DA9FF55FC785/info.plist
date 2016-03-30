@@ -78,7 +78,7 @@
 $w = new Workflows();
 $query = urlencode("{query}");
  
-$url = 'http://fanyi.youdao.com/openapi.do?keyfrom=Youdao-workflow&amp;key=1738796775&amp;type=data&amp;doctype=json&amp;version=1.1&amp;q=' . $query;
+$url = 'http://fanyi.youdao.com/openapi.do?keyfrom=5wpc-web&amp;key=582225444&amp;type=data&amp;doctype=json&amp;version=1.1&amp;q=' . $query;
 $results = json_decode($w-&gt;request($url));
 
 foreach ($results-&gt;translation as $result) {
