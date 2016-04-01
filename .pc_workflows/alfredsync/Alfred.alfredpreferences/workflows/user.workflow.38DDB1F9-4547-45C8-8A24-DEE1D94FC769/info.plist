@@ -8,11 +8,11 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
-		<key>30A44743-A6ED-4F42-B7AA-05DD2F7BBA7C</key>
+		<key>10B352E0-B987-4167-9358-0F5214C50984</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>7E7A91A6-63EC-4B8E-901B-A5E335B72384</string>
+				<string>4EFCA498-2445-4840-8788-1F6AE02DE346</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -41,6 +41,31 @@
 	<string>Quick Add to Doit.im</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>......Finish</string>
+				<key>title</key>
+				<string>Quick Add to Doit.im</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>9B2F435E-DB8C-4EC4-806A-2A24BCF4E3C6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -202,44 +227,52 @@ end DeletePwrdItemFromKeychain
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>......Finish</string>
-				<key>title</key>
-				<string>Quick Add to Doit.im</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>9B2F435E-DB8C-4EC4-806A-2A24BCF4E3C6</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>keyword</key>
 				<string>qd</string>
+				<key>subtext</key>
+				<string>Add items</string>
 				<key>text</key>
-				<string>Quick Add to Doit.im</string>
+				<string>Smart Add to Doit.im</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>30A44743-A6ED-4F42-B7AA-05DD2F7BBA7C</string>
+			<string>10B352E0-B987-4167-9358-0F5214C50984</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+    -- your script here
+    tell application "System Events"
+        tell process "Doit.im"
+            keystroke "z" using {command down, shift down, option down, control down}
+            if (count of q)&gt;0 then
+                --set winstuff to entire contents of front window
+                --set menustuff to entire contents of menu bar 1
+                --display dialog winstuff default answer menustuff
+                set value of (text field 1 of window "Smart Add") to q
+                keystroke return
+                key code 53
+            end if
+        end tell
+    end tell
+end alfred_script
+</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>4EFCA498-2445-4840-8788-1F6AE02DE346</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -248,10 +281,15 @@ end DeletePwrdItemFromKeychain
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>30A44743-A6ED-4F42-B7AA-05DD2F7BBA7C</key>
+		<key>10B352E0-B987-4167-9358-0F5214C50984</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
+			<real>130</real>
+		</dict>
+		<key>4EFCA498-2445-4840-8788-1F6AE02DE346</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
 		</dict>
 		<key>7E7A91A6-63EC-4B8E-901B-A5E335B72384</key>
 		<dict>
