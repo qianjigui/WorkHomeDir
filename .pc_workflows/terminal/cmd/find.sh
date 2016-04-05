@@ -9,6 +9,7 @@ pcwf_findsrc() {
         -o -iname '*.hpp' \
         -o -iname '*.hxx' \
         -o -iname '*.java' \
+        -o -iname '*.mk' \
         -o -iname '*.xml' \
         -o -iname '*.mk' \
         -o -iname '*.rb' \
