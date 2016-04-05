@@ -1,7 +1,7 @@
 BIN=/OpenbaseBSPHome/bins
 
 
-for item in android-ndk-r10c ruby2.1.2/bin vim/bin global6.4/bin
+for item in android-ndk-r10c ruby2.1.2/bin vim/bin global/6.5.4/bin
 do
     if [ -d $BIN/$itme ];
     then
