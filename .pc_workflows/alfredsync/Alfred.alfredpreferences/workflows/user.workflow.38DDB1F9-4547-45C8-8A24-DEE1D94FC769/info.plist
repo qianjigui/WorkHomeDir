@@ -260,6 +260,8 @@ end DeletePwrdItemFromKeychain
                 --display dialog winstuff default answer menustuff
                 set value of (text field 1 of window "Smart Add") to q
                 key code 36
+                -- If the doit.im is at the front, we should enter twice &lt;return&gt;
+                key code 36
                 key code 53
             end if
         end tell
