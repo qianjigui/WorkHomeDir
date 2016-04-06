@@ -259,7 +259,7 @@ end DeletePwrdItemFromKeychain
                 --set menustuff to entire contents of menu bar 1
                 --display dialog winstuff default answer menustuff
                 set value of (text field 1 of window "Smart Add") to q
-                keystroke return
+                key code 36
                 key code 53
             end if
         end tell
