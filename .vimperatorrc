@@ -33,6 +33,7 @@ command -nargs=0 -description='Go to Alibaba ATA' ata tabopen http://www.atatech
 
 command -nargs=0 -description='Go to HR system' hr tabopen https://alihr.alibaba.com:4430/psp/alihr/EMPLOYEE/HRMS/h/?cmd=login&languageCd=ZHS
 
+command -nargs=0 -description='Go to Evernote' note tabopen https://www.evernote.com/Home.action
 
 "bugfree is closed"
 "command -nargs=1 -description='Go to Bugfree external By ID' bug tabopen http://bugfree-external.aliyun-inc.com/bugfree/bug/<args>
