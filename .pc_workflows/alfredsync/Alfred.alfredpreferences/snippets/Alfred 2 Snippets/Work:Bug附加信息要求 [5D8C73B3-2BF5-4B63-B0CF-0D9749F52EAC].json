@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "谢谢厂商的问题反馈, 麻烦再提供如下信息:\n\n1. 出现问题的具体芯片\n2. YunOS 具体版本\n3. 出现问题的概率(总共测试多少台, 问题机器多少台)\n4. 主要硬件的型号(存储器NAND, 内存大小)\n5. 影响范围(产品测试, 认证测试, 客户反馈)",
+    "dontautoexpand" : true,
+    "uid" : "5D8C73B3-2BF5-4B63-B0CF-0D9749F52EAC",
+    "name" : "Work:Bug附加信息要求",
+    "keyword" : "wbuginfo"
+  }
+}

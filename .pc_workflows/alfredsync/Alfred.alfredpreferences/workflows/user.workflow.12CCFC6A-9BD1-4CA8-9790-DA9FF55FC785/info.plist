@@ -17,6 +17,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
@@ -25,6 +27,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 	</dict>
@@ -45,17 +49,21 @@
 				<false/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
 			<string>96159F02-1880-4FCF-9B30-02652898058D</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -81,9 +89,12 @@ $query = urlencode("{query}");
 $url = 'http://fanyi.youdao.com/openapi.do?keyfrom=5wpc-web&amp;key=582225444&amp;type=data&amp;doctype=json&amp;version=1.1&amp;q=' . $query;
 $results = json_decode($w-&gt;request($url));
 
-foreach ($results-&gt;translation as $result) {
-    $w-&gt;result($result, $result, $result, $result, 'icon.png', '');
+if (count($results-&gt;translation)&gt;0){
+  foreach ($results-&gt;translation as $result) {
+      $w-&gt;result($result, $result, $result, $result, 'icon.png', '');
+  }
 }
+
 
 if (count($results-&gt;web) &gt; 0) {
     foreach ($results-&gt;web as $web) {
@@ -96,6 +107,10 @@ if (count($w-&gt;results()) == 0) {
 }
 
 echo $w-&gt;toxml();</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
 				<key>subtext</key>
 				<string>请输入需要翻译的中英文</string>
 				<key>title</key>
@@ -110,7 +125,7 @@ echo $w-&gt;toxml();</string>
 			<key>uid</key>
 			<string>160E3B74-C1C8-4F4F-8E6E-A64B1CDC48FE</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -119,11 +134,7 @@ echo $w-&gt;toxml();</string>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
 				<false/>
-				<key>output</key>
-				<integer>0</integer>
 				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
 				<false/>
 				<key>text</key>
 				<string>{query}</string>
@@ -135,7 +146,7 @@ echo $w-&gt;toxml();</string>
 			<key>uid</key>
 			<string>B831172E-379D-444D-AECE-4BA8D2A662DB</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -144,16 +155,22 @@ echo $w-&gt;toxml();</string>
 	<dict>
 		<key>160E3B74-C1C8-4F4F-8E6E-A64B1CDC48FE</key>
 		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
 			<key>ypos</key>
 			<real>110</real>
 		</dict>
 		<key>96159F02-1880-4FCF-9B30-02652898058D</key>
 		<dict>
+			<key>xpos</key>
+			<integer>700</integer>
 			<key>ypos</key>
 			<real>40</real>
 		</dict>
 		<key>B831172E-379D-444D-AECE-4BA8D2A662DB</key>
 		<dict>
+			<key>xpos</key>
+			<integer>700</integer>
 			<key>ypos</key>
 			<real>160</real>
 		</dict>

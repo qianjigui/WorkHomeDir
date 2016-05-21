@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "辛苦支持同学了, 谢谢厂商的反馈.\n\n相关反馈已经在Bug上添加, 并同步到外部bug平台供厂商与芯片商查看.\n具体URL见: \n1. 内部平台: {clipboard}  \n2. 外部平台: {clipboard}  \n请支持同学在外部平台上, 将厂商用户账号添加并可查.\n\nPS:\n外部平台: http:\/\/kelude.aliyun.com\/project\n成员与用户管理: http:\/\/kelude.aliyun.com\/project\/members?spm=0.0.0.0.JplB5o&projectId=236\n\n",
+    "dontautoexpand" : true,
+    "uid" : "5F08A8CA-5AAA-4928-837B-9422E2C4F799",
+    "name" : "Work:Bug",
+    "keyword" : "webug"
+  }
+}

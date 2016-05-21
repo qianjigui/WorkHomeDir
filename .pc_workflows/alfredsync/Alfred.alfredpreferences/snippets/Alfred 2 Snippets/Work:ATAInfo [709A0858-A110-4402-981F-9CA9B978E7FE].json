@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "谢谢提出问题, 此类问题已经在ATA论坛上有相关解答.\n\n具体参见: {clipboard}\n\nPS:\nYunOS集成ATA相关讨论组: http:\/\/www.atatech.org\/groups\/1132\n里面有大家的技术总结, 问题答疑, 后续你们的问题也可以提在这里让各位同学解答哦.\n\n",
+    "dontautoexpand" : true,
+    "uid" : "709A0858-A110-4402-981F-9CA9B978E7FE",
+    "name" : "Work:ATAInfo",
+    "keyword" : "weata"
+  }
+}

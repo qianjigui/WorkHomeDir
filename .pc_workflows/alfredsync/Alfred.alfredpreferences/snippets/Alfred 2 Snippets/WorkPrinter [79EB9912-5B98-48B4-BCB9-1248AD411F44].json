@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "我要打印文件:{clipboard},请尽快处理！",
+    "dontautoexpand" : true,
+    "uid" : "79EB9912-5B98-48B4-BCB9-1248AD411F44",
+    "name" : "WorkPrinter",
+    "keyword" : "wprint"
+  }
+}

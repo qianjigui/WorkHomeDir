@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "[Openbase] {date} YunOS 3.0.0 移植信息同步\n\n主要修改:\n\n完整移植文档参见: http:\/\/gitlab.alibaba-inc.com\/yunos_ide_team\/yunos_porting_doc\/tree\/yunos\/3.0.0",
+    "dontautoexpand" : true,
+    "uid" : "3FF98C11-F87B-436F-9C82-977E5F27D399",
+    "name" : "Work:OBInfoEmail",
+    "keyword" : "wobinfo"
+  }
+}
