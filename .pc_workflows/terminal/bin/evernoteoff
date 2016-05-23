@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -e
+set -x
+
+EN_BASE=$HOME/Library/Containers
+BACK_FILE=EN_BACKUP.tar
+PREFIX=com.evernote.Evernote
+
+cd $EN_BASE
+
+if [ -d $PREFIX ];
+then
+    echo 'RM old'
+    rm $BACK_FILE
+    echo 'TAR ...'
+    tar -c -v -p -f $EN_BASE/$BACK_FILE $PREFIX*
+    echo 'RM ...'
+    rm -rf $PREFIX*
+fi
+
