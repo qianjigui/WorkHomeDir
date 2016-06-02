@@ -52,11 +52,9 @@
 		<key>E01321D2-13F8-4525-88E8-D4C63227B351</key>
 		<dict>
 			<key>enabled</key>
-			<true/>
+			<false/>
 			<key>keyword</key>
 			<string>rdoc</string>
-			<key>plusSpaces</key>
-			<false/>
 			<key>text</key>
 			<string>Ruby Doc Search for {query}</string>
 			<key>url</key>
