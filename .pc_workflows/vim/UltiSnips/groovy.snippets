@@ -1,0 +1,19 @@
+snippet repo "Mirror to local server" w
+//Set gradle/wrapper/gradle-wrapper.properties
+//distributionUrl=http://mirrors.taobao.net/mirror/gradle/gradle-2.9-bin.zip
+
+allprojects {
+    repositories {
+        maven { url "http://repo.alibaba-inc.com/nexus/content/groups/alirepositiry" }
+    }
+}
+
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url "http://mvnrepo.alibaba-inc.com/mvn/repository" }
+    }
+}
+endsnippet
+
+# vim:ft=snippets:
