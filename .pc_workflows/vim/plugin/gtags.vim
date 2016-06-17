@@ -11,6 +11,7 @@ let GtagsCscope_Auto_Load = 1
 let CtagsCscope_Auto_Map = 1
 let GtagsCscope_Quiet = 1
 
+"let Gtags_Auto_Update = 1
 let Gtags_Auto_Map=0
 let Gtags_OpenQuickfixWindow = 1
 let Gtags_Use_Tags_Format=1
@@ -26,6 +27,9 @@ let Gtags_Use_Tags_Format=1
 
 "搜索光标所在函数的引用
 "nmap <A-r> :Gtags -r<CR><CR>
-"nmap <leader>g :Gtags 
+"nmap <leader>g :Gtags
+
+"G Short name for Gtags
+cabbrev G Gtags
 
 cscope add GTAGS
