@@ -34,18 +34,30 @@ def week_range(t)
     '[%s]' % [res.join(',')]
 end
 
+def time2Item(t)
+    title = t.strftime('%F %T %z %A')
+    subtitle = '%s %s %.2fy %.2fm' % [t.strftime('%jd/%Vw'), week_range(t), t.yday/365.0, t.mday*1.0/day_of_month(t.year, t.month)]
+    arg = '%s %s' % [title, subtitle]
+    {title: title, subtitle: subtitle, arg: arg}
+end
+
 Alfred.with_friendly_error do |alfred|
   alfred.with_rescue_feedback = true
 
   fb = alfred.feedback
 
-  t = Time.now
+  data = ARGV[0]
 
-  title = t.strftime('%F %T %z %A')
-  subtitle = '%s %s %.2fy %.2fm' % [t.strftime('%jd/%Vw'), week_range(t), t.yday/365.0, t.mday*1.0/day_of_month(t.year, t.month)]
-  arg = '%s %s' % [title, subtitle]
+  if ''==data
+      t = Time.now
 
-  fb.add_item({title: title, subtitle: subtitle, arg: arg})
+      fb.add_item(time2Item(t))
+  else
+      i = data.to_i
+      [i/10**3,i,i/10**9].each do |i|
+          fb.add_item(time2Item(Time.at(i)))
+      end
+  end
 
   puts fb.to_alfred
 end

@@ -121,7 +121,7 @@
 			<key>github.com/gorilla/mux</key>
 			<dict>
 				<key>date</key>
-				<date>2016-07-19T02:27:36Z</date>
+				<date>2016-08-18T09:27:35Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -282,6 +282,16 @@
 			<dict>
 				<key>date</key>
 				<date>2016-06-12T13:18:08Z</date>
+			</dict>
+			<key>http://kapeli.com/feeds/Python_2.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2016-08-04T08:35:29Z</date>
+			</dict>
+			<key>http://kapeli.com/feeds/Python_3.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2016-08-04T08:35:34Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Redis.xml</key>
 			<dict>
