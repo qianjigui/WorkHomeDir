@@ -17,6 +17,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 	</dict>
@@ -49,15 +51,17 @@
 			<key>uid</key>
 			<string>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>plusspaces</key>
-				<false/>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
 				<key>url</key>
-				<string>http://k3.alibaba-inc.com/issue/{query}</string>
+				<string>http://aone.alibaba-inc.com/issue/{query}</string>
 				<key>utf8</key>
 				<true/>
 			</dict>
@@ -66,7 +70,7 @@
 			<key>uid</key>
 			<string>11D5721D-E45C-4D45-82C8-2CC370002271</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -75,11 +79,15 @@
 	<dict>
 		<key>11D5721D-E45C-4D45-82C8-2CC370002271</key>
 		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
 			<key>ypos</key>
 			<real>60</real>
 		</dict>
 		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
 		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
 			<key>ypos</key>
 			<real>60</real>
 		</dict>
