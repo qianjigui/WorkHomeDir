@@ -1,3 +1,6 @@
+#http://apple.stackexchange.com/a/127405/183620
+#sudo scutil --set HostName Mac.local
+#
 
 #java
 _TMP=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/
@@ -25,6 +28,13 @@ _TMP=/usr/local/vim74
 if [ -d $_TMP ];
 then
     export LOCALVIM=$_TMP
+fi
+
+#markdown2html
+_TMP=$PCWF/terminal/cmd/script/Markdown2html
+if [ -d $_TMP ];
+then
+    export MD2HTML=$_TMP
 fi
 
 #Env

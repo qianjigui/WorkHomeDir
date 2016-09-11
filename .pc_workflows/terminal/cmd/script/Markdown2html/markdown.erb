@@ -1,0 +1,29 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title> 阿里云盒联盟产品公板发布文档ReleaseNote </title>
+        <style media="all">
+            <%=File.read(CURRENT_DIR+'all.css')%>
+        </style>
+        <style media="print">
+            <%=File.read(CURRENT_DIR+'print.css')%>
+        </style>
+    </head>
+    <body>
+        <div class="content-wrapper">
+            <div class="container-fluid container-limited">
+                <div class="content">
+                    <div class="clearfix">
+                        <div class="project-show-readme">
+                            <article class="readme-holder">
+                                <div class="file-content wiki">
+                                    <%=markdown.render(File.read(input))%>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
