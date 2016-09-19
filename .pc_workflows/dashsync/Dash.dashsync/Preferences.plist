@@ -238,7 +238,7 @@
 	<key>DHWebViewIsDark</key>
 	<false/>
 	<key>annotationsAreShown</key>
-	<true/>
+	<false/>
 	<key>docsets</key>
 	<dict>
 		<key>keywords</key>

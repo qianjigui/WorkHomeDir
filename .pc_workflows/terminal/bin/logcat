@@ -1,3 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env ruby
+#
+#encoding: UTF-8
+#
 
-adb logcat -v time $* | tee "logcat$(date +%Y%m%d.%H%M%S).log"
+args = ARGV
+params = args.join('_').gsub('/','__')
+
+Signal.trap("SIGQUIT") do
+    exit 1
+end
+Signal.trap("SIGINT") do
+    exit 1
+end
+
+system("adb logcat -v time #{args.join(' ')} | tee \"logcat$(date +%Y%m%d.%H%M%S).#{params}.log\"")
